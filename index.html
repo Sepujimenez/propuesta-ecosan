@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+        
+        .cover {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 100px 50px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .cover h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .cover h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .cover p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            color: #1e3c72;
+            border-bottom: 2px solid #1e3c72;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 1.8em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .feature-box {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #1e3c72;
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-box h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1.4em;
+        }
+
+        .feature-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .feature-box li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-box li:before {
+            content: "•";
+            color: #1e3c72;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .price {
+            margin-top: 25px;
+            padding: 15px;
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        .deadline-notice {
+            background: #fff3cd;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #856404;
+            font-weight: 500;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            padding-left: 40px;
+            border-left: 2px solid #1e3c72;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #1e3c72;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-item h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .pricing-details {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #1e3c72;
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        tr:last-child {
+            font-weight: 600;
+            background-color: #f8f9fa;
+        }
+
+        .signature-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .signature-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .signature-block {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .signature-line {
+            margin-top: 25px;
+            border-top: 2px solid #333;
+            padding-top: 15px;
+            min-width: 250px;
+        }
+
+        .footer {
+            background: #1e3c72;
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            font-weight: 300;
+        }
+
+        small {
+            display: block;
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 8px;
+            font-weight: 300;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .cover {
+                background: #1e3c72 !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .section {
+                break-inside: avoid;
+                box-shadow: none;
+            }
+
+            table {
+                box-shadow: none;
+            }
+
+            th {
+                background-color: #1e3c72 !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .signature-container {
+                flex-direction: column;
+            }
+
+            .cover {
+                padding: 50px 20px;
+            }
+
+            .cover h1 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+        }
+        .precio-tachado {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .precio-nuevo {
+            color: #28a745;
+            font-weight: bold;
+        
+        }
+        .descuento-row {
+            background-color: #e8f5e9 !important;
+        }
+            
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <h1>Propuesta Comercial</h1>
+        <h2>Sistema de Gestión Integral</h2>
+        <p>Solución Empresarial Personalizada</p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Resumen Ejecutivo</h2>
+            <p>Sistema de gestión integral personalizado que unifica y optimiza todos los procesos de su empresa, asegurando control total y eficiencia operativa.</p>
+            
+            <div class="deadline-notice">
+                <strong>Tiempo de Desarrollo:</strong> 4 meses (896 horas totales)
+                <br>
+                <strong>Dedicación:</strong> 56 horas semanales
+            </div>
+            
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Portal Oficina (448 horas)</h3>
+                    <ul>
+                        <li>Módulo de Inventario</li>
+                        <li>Módulo de Clientes</li>
+                        <li>Módulo de Contratos</li>
+                        <li>Módulo de Planificación</li>
+                        <li>Módulo de RRHH</li>
+                        <li>Módulo de Verificación</li>
+                        <li>Módulo de Gestión Financiera
+                            <small>(Acceso exclusivo dueño)</small>
+                        </li>
+                    </ul>
+                    <p class="price">Valor: 11,200,000 CLP</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Portal Técnico (224 horas)</h3>
+                    <ul>
+                        <li>Módulo Trabajos del Día</li>
+                        <li>Módulo de Inventario</li>
+                        <li>Módulo de Agenda</li>
+                    </ul>
+                    <p class="price">Valor: 5,600,000 CLP</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Portal Cliente (224 horas)</h3>
+                    <ul>
+                        <li>Módulo Gestión Documentos</li>
+                        <li>Módulo de Servicios</li>
+                        <li>Módulo de Estadísticas</li>
+                    </ul>
+                    <p class="price">Valor: 5,600,000 CLP</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Beneficios Clave</h3>
+                    <ul>
+                        <li>Sistema propio y personalizado</li>
+                        <li>Independencia de sistemas genéricos</li>
+                        <li>Propiedad total del código fuente</li>
+                        <li>Adaptabilidad a cambios futuros</li>
+                        <li>Escalabilidad garantizada</li>
+                        <li>Soporte directo y especializado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Cronograma de Desarrollo</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Mes 1: Portal Oficina</h3>
+                    <ul>
+                        <li>Módulo de Inventario</li>
+                        <li>Módulo de Clientes</li>
+                        <li>Módulo de Contratos</li>
+                        <li>Módulo de Planificación</li>
+                        <li>Módulo de RRHH</li>
+                        <li>Módulo de Verificación</li>
+                        <li>Módulo de Gestión Financiera</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Mes 2: Portal Técnico</h3>
+                    <ul>
+                        <li>Módulo Trabajos del Día</li>
+                        <li>Módulo de Inventario</li>
+                        <li>Módulo de Agenda</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Mes 3: Portal Cliente</h3>
+                    <ul>
+                        <li>Módulo Gestión Documentos</li>
+                        <li>Módulo de Servicios</li>
+                        <li>Módulo de Estadísticas</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Mes 4: Finalización</h3>
+                    <ul>
+                        <li>Testing integral</li>
+                        <li>Implementación</li>
+                        <li>Capacitación</li>
+                        <li>Documentación</li>
+                        <li>Entrega final</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section pricing-details">
+            <h2>Desglose de Inversión</h2>
+            <table>
+                <tr>
+                    <th>Componente</th>
+                    <th>Horas</th>
+                    <th>Valor (CLP)</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>Portal Oficina</td>
+                    <td>448</td>
+                    <td>11,200,000</td>
+                    <td>Desarrollo completo de los 7 módulos principales, incluyendo el módulo de gestión financiera con acceso exclusivo.</td>
+                </tr>
+                <tr>
+                    <td>Portal Técnico</td>
+                    <td>224</td>
+                    <td>5,600,000</td>
+                    <td>Implementación de módulos para gestión de trabajo diario, inventario y agenda de técnicos.</td>
+                </tr>
+                <tr>
+                    <td>Portal Cliente</td>
+                    <td>224</td>
+                    <td>5,600,000</td>
+                    <td>Desarrollo de interfaz cliente con gestión documental, servicios y estadísticas.</td>
+                </tr>
+                <tr>
+                    <td>Gestión de Proyecto</td>
+                    <td>-</td>
+                    <td><span class="precio-tachado">1,680,000</span> <span class="precio-nuevo">0</span></td>
+                    <td>Coordinación, planificación y seguimiento del proyecto, reuniones de avance, gestión de requerimientos.</td>
+                </tr>
+                <tr>
+                    <td>Testing y QA</td>
+                    <td>-</td>
+                    <td><span class="precio-tachado">1,680,000</span> <span class="precio-nuevo">0</span></td>
+                    <td>Pruebas exhaustivas de funcionalidad, seguridad, rendimiento y experiencia de usuario.</td>
+                </tr>
+                <tr class="descuento-row">
+                    <th>Total con Descuento</th>
+                    <th>896</th>
+                    <th>22,400,000</th>
+                    <th>Sistema completo con 3 portales integrados</th>
+                </tr>
+            </table>
+        </div>
+        <div class="section">
+            <h2>Especificaciones Técnicas</h2>
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Tecnologías del Sistema</h3>
+                    <ul>
+                        <li>Backend: PHP 8</li>
+                        <li>Frontend: HTML5, CSS3, JavaScript</li>
+                        <li>Framework CSS: Bootstrap 5</li>
+                        <li>Base de datos: MySQL 8.0</li>
+                        <li>Librería de correos: PHPMailer</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>Base de Datos</h3>
+                    <ul>
+                        <li>Modelado relacional optimizado</li>
+                        <li>Normalización hasta 3FN</li>
+                        <li>Triggers para auditoría</li>
+                        <li>Respaldos automáticos</li>
+                        <li>Optimización de consultas</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>Infraestructura</h3>
+                    <ul>
+                        <li>Hosting: Google Cloud Platform</li>
+                        <li>Subdominio: sistema.ecosanplagas.cl</li>
+                        <li>Certificado SSL incluido</li>
+                        <li>Almacenamiento SSD</li>
+                        <li>Escalabilidad vertical</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>Seguridad</h3>
+                    <ul>
+                        <li>Encriptación de datos sensibles</li>
+                        <li>Control de sesiones</li>
+                        <li>Prevención de SQL Injection</li>
+                        <li>Control de acceso por rol</li>
+                        <li>Logs de actividad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Inclusiones y Garantías</h2>
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Desarrollo Completo</h3>
+                    <ul>
+                        <li>3 portales interconectados</li>
+                        <li>Testing exhaustivo</li>
+                        <li>Optimización de rendimiento</li>
+                        <li>Código fuente optimizado</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>Implementación</h3>
+                    <ul>
+                        <li>Configuración de servidores</li>
+                        <li>Despliegue del sistema</li>
+                        <li>Migración de datos básica</li>
+                        <li>Configuración inicial</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>Soporte y Garantía</h3>
+                    <ul>
+                        <li>3 meses de mantenimiento</li>
+                        <li>Corrección de bugs</li>
+                        <li>Soporte técnico básico</li>
+                        <li>Actualizaciones de seguridad</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>Entregables</h3>
+                    <ul>
+                        <li>Código fuente documentado</li>
+                        <li>Manuales completos</li>
+                        <li>Capacitación inicial</li>
+                        <li>Documentación técnica</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="signature-section">
+            <h2>Aceptación de la Propuesta</h2><br>
+            <div class="signature-container">
+                <div class="signature-block">
+                    <p>Cliente:</p>
+                    <p><strong>Luis Acuña Bustos - EcosanPlagas</strong></p>
+                    <div class="signature-line"></div>
+                    <small>Firma Cliente</small>
+                </div>
+                <div class="signature-block">
+                    <p>Desarrollador:</p>
+                    <p><strong>Felipe Sepúlveda Jiménez</strong></p>
+                    <div class="signature-line"></div>
+                    <small>Firma Desarrollador</small>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <p>Fecha: ___________________</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3>Información de Contacto</h3>
+        <p>953550896 | sepujimenez.dev@gmail.com</p>
+    </div>
+</body>
+</html>
