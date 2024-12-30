@@ -4,6 +4,20 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #f8fafc;
+            --text-color: #334155;
+            --light-gray: #f1f5f9;
+            --border-color: #e2e8f0;
+            --success-color: #22c55e;
+            --warning-color: #eab308;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,322 +26,351 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f7fa;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
         }
-        
+
         .cover {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 100px 50px;
+            padding: 120px 50px;
             text-align: center;
             position: relative;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cover::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: inherit;
+            transform: skewY(-3deg);
+            z-index: -1;
         }
 
         .cover h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             font-weight: 700;
         }
 
         .cover h2 {
-            font-size: 2em;
+            font-size: 2.2em;
             margin-bottom: 20px;
             font-weight: 500;
         }
 
         .cover p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 40px;
             font-weight: 300;
+            opacity: 0.9;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
         .section {
-            margin-bottom: 40px;
-            padding: 40px;
+            margin-bottom: 60px;
+            padding: 50px;
             background: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            border-radius: 12px;
-            transition: transform 0.3s ease;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
         }
 
         .section:hover {
             transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         .section h2 {
-            color: #1e3c72;
-            border-bottom: 2px solid #1e3c72;
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 40px;
+            position: relative;
             padding-bottom: 15px;
-            margin-bottom: 30px;
-            font-weight: 600;
-            font-size: 1.8em;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         .section h3 {
-            color: #1e3c72;
+            color: var(--primary-dark);
+            font-size: 1.5em;
             margin: 30px 0 20px;
             font-weight: 600;
-            font-size: 1.4em;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         .feature-box {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 4px solid #1e3c72;
+            background: var(--light-gray);
+            padding: 35px;
+            border-radius: 16px;
             transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
         .feature-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            background: white;
         }
 
         .feature-box h3 {
-            color: #1e3c72;
-            margin-bottom: 20px;
-            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 25px;
             font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .feature-box ul {
-            list-style-type: none;
-            padding-left: 0;
+            list-style: none;
         }
 
         .feature-box li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             padding-left: 25px;
             position: relative;
         }
 
         .feature-box li:before {
-            content: "•";
-            color: #1e3c72;
+            content: "→";
+            color: var(--primary-color);
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
         .price {
-            margin-top: 25px;
-            padding: 15px;
-            background: #1e3c72;
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--primary-color);
             color: white;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 500;
-            font-size: 1.1em;
-        }
-
-        .deadline-notice {
-            background: #fff3cd;
-            color: #856404;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #856404;
-            font-weight: 500;
+            font-size: 1.2em;
+            box-shadow: var(--shadow-sm);
         }
 
         .timeline {
             position: relative;
-            padding: 30px 0;
+            padding: 40px 0;
         }
 
         .timeline-item {
-            margin-bottom: 40px;
-            padding-left: 40px;
-            border-left: 2px solid #1e3c72;
+            margin-bottom: 50px;
+            padding-left: 50px;
+            border-left: 3px solid var(--primary-color);
             position: relative;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -11px;
+            left: -12px;
             top: 0;
-            width: 20px;
-            height: 20px;
-            background: #1e3c72;
+            width: 22px;
+            height: 22px;
+            background: var(--primary-color);
             border-radius: 50%;
-            border: 3px solid white;
+            border: 4px solid white;
+            box-shadow: var(--shadow-sm);
         }
 
-        .timeline-item h3 {
-            color: #1e3c72;
-            margin-bottom: 15px;
-            font-weight: 600;
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 30px;
         }
 
-        .pricing-details {
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .table-container {
             overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
             background: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            overflow: hidden;
         }
 
         th, td {
             padding: 20px;
             text-align: left;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
-            background-color: #1e3c72;
+            background: var(--primary-color);
             color: white;
             font-weight: 500;
+            white-space: nowrap;
         }
 
         tr:hover {
-            background-color: #f8f9fa;
+            background: var(--light-gray);
         }
 
-        tr:last-child {
-            font-weight: 600;
-            background-color: #f8f9fa;
+        .notice {
+            background: var(--light-gray);
+            border-left: 4px solid var(--warning-color);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .precio-tachado {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+
+        .precio-nuevo {
+            color: var(--success-color);
+            font-weight: bold;
         }
 
         .signature-section {
-            margin-top: 60px;
-            padding: 40px;
-            background: #f8f9fa;
-            border-radius: 12px;
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin-top: 80px;
         }
 
         .signature-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
+            margin-top: 30px;
         }
 
         .signature-block {
-            flex: 1;
-            min-width: 300px;
+            text-align: center;
         }
 
         .signature-line {
-            margin-top: 25px;
-            border-top: 2px solid #333;
+            margin: 25px auto;
+            width: 80%;
+            border-top: 2px solid var(--text-color);
             padding-top: 15px;
-            min-width: 250px;
         }
 
         .footer {
-            background: #1e3c72;
+            background: var(--primary-color);
             color: white;
-            padding: 50px 30px;
+            padding: 60px 30px;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 80px;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
         }
 
         .footer h3 {
             margin-bottom: 20px;
             font-weight: 500;
+            font-size: 1.5em;
         }
 
         .footer p {
-            margin: 10px 0;
-            font-weight: 300;
+            opacity: 0.9;
+            font-size: 1.1em;
         }
 
-        small {
-            display: block;
-            color: #666;
-            font-size: 0.85em;
-            margin-top: 8px;
-            font-weight: 300;
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 10px;
+            background: var(--primary-color);
+            color: white;
         }
 
-        .precio-tachado {
-            text-decoration: line-through;
-            color: #999;
-        }
-        
-        .precio-nuevo {
-            color: #28a745;
-            font-weight: bold;
-        }
-        
-        .descuento-row {
-            background-color: #e8f5e9 !important;
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
         }
 
-        @media print {
-            body {
-                background: white;
-            }
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
 
-            .cover {
-                background: #1e3c72 !important;
-                -webkit-print-color-adjust: exact;
-            }
-            
-            .section {
-                break-inside: avoid;
-                box-shadow: none;
-            }
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
 
-            table {
-                box-shadow: none;
-            }
-
-            th {
-                background-color: #1e3c72 !important;
-                -webkit-print-color-adjust: exact;
-            }
+        .benefit-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
         }
 
         @media (max-width: 768px) {
+            .cover {
+                padding: 80px 20px;
+            }
+
+            .cover h1 {
+                font-size: 2.5em;
+            }
+
+            .section {
+                padding: 30px;
+            }
+
             .grid {
                 grid-template-columns: 1fr;
             }
 
-            .signature-container {
-                flex-direction: column;
-            }
-
-            .cover {
-                padding: 50px 20px;
-            }
-
-            .cover h1 {
-                font-size: 2em;
-            }
-
-            .section {
-                padding: 20px;
-            }
-
-            table {
-                font-size: 0.9em;
+            .timeline-item {
+                padding-left: 30px;
             }
         }
     </style>
@@ -336,478 +379,498 @@
     <div class="cover">
         <h1>Propuesta Comercial</h1>
         <h2>Sistema de Gestión Integral</h2>
-        <p>Solución Empresarial Personalizada</p>
+        <p>Solución Empresarial Personalizada para EcosanPlagas</p>
     </div>
 
     <div class="container">
+        <!-- Resumen Ejecutivo -->
         <div class="section">
             <h2>Resumen Ejecutivo</h2>
-            <p>Sistema de gestión integral personalizado que unifica y optimiza todos los procesos de su empresa, asegurando control total y eficiencia operativa.</p>
+            <p>Presentamos una solución integral de gestión empresarial diseñada específicamente para EcosanPlagas, que unifica y optimiza todos los procesos de su empresa, garantizando un control total y máxima eficiencia operativa.</p>
             
-            <div class="deadline-notice">
+            <div class="notice">
                 <strong>Tiempo de Desarrollo:</strong> 4 meses (896 horas totales)
                 <br>
                 <strong>Dedicación:</strong> 56 horas semanales
+                <br>
+                <strong>Entrega Final:</strong> Sistema completo con documentación y capacitación
             </div>
-            
+
+            <h3>Visión General del Sistema</h3>
             <div class="grid">
                 <div class="feature-box">
-                    <h3>Portal Oficina (448 horas)</h3>
+                    <h3>Portal Oficina <span class="tag">448h</span></h3>
                     <ul>
-                        <li>Módulo de Inventario</li>
-                        <li>Módulo de Clientes</li>
-                        <li>Módulo de Contratos</li>
-                        <li>Módulo de Planificación</li>
-                        <li>Módulo de RRHH</li>
-                        <li>Módulo de Verificación</li>
-                        <li>Módulo de Gestión Financiera
-                            <small>(Acceso exclusivo dueño)</small>
-                        </li>
+                        <li>Control total de inventario y bodega</li>
+                        <li>Gestión completa de clientes</li>
+                        <li>Administración de contratos</li>
+                        <li>Planificación y asignación de servicios</li>
+                        <li>Gestión de recursos humanos</li>
+                        <li>Verificación de servicios</li>
+                        <li>Control financiero exclusivo</li>
                     </ul>
                     <p class="price">Valor: 11,200,000 CLP</p>
                 </div>
+
                 <div class="feature-box">
-                    <h3>Portal Técnico (224 horas)</h3>
+                    <h3>Portal Técnico <span class="tag">224h</span></h3>
                     <ul>
-                        <li>Módulo Trabajos del Día</li>
-                        <li>Módulo de Inventario</li>
-                        <li>Módulo de Agenda</li>
+                        <li>Gestión de trabajos diarios</li>
+                        <li>Control de inventario personal</li>
+                        <li>Agenda y planificación</li>
+                        <li>Formularios digitales</li>
+                        <li>Registro de servicios</li>
                     </ul>
                     <p class="price">Valor: 5,600,000 CLP</p>
                 </div>
+
                 <div class="feature-box">
-                    <h3>Portal Cliente (224 horas)</h3>
+                    <h3>Portal Cliente <span class="tag">224h</span></h3>
                     <ul>
-                        <li>Módulo Gestión Documentos</li>
-                        <li>Módulo de Servicios</li>
-                        <li>Módulo de Estadísticas</li>
+                        <li>Acceso a documentación</li>
+                        <li>Solicitud de servicios</li>
+                        <li>Seguimiento en tiempo real</li>
+                        <li>Reportes y estadísticas</li>
+                        <li>Gestión de certificados</li>
                     </ul>
                     <p class="price">Valor: 5,600,000 CLP</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Beneficios Clave</h3>
-                    <ul>
-                        <li>Sistema propio y personalizado</li>
-                        <li>Independencia de sistemas genéricos</li>
-                        <li>Propiedad total del código fuente</li>
-                        <li>Documentación técnica completa</li>
-                        <li>Escalabilidad garantizada</li>
-                        <li>Soporte directo y especializado</li>
-                    </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Beneficios Clave -->
         <div class="section">
-            <h2>Opciones de Pago</h2>
+            <h2>Beneficios Clave</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>Sistema Personalizado</h4>
+                    <p>Desarrollo a medida según sus necesidades específicas, garantizando una solución única para su empresa.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Independencia Total</h4>
+                    <p>Libertad completa de sistemas genéricos, con control total sobre la plataforma.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Propiedad del Código</h4>
+                    <p>Código fuente completamente documentado y de su propiedad.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Escalabilidad</h4>
+                    <p>Diseñado para crecer junto con su empresa, permitiendo expansiones futuras.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Soporte Especializado</h4>
+                    <p>Atención directa y personalizada por parte del equipo desarrollador.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Documentación Completa</h4>
+                    <p>Documentación técnica detallada y manuales de usuario incluidos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detalles Técnicos -->
+        <div class="section">
+            <h2>Especificaciones Técnicas</h2>
             <div class="grid">
                 <div class="feature-box">
-                    <h3>Opción 1: Pago en dos cuotas</h3>
+                    <h3>Tecnologías</h3>
                     <ul>
-                        <li>50% al inicio del proyecto (11,200,000 CLP)</li>
-                        <li>50% a la entrega final (11,200,000 CLP)</li>
+                        <li>Backend: PHP 8 con arquitectura MVC</li>
+                        <li>Frontend: HTML5, CSS3, JavaScript moderno</li>
+                        <li>Framework CSS: Bootstrap 5</li>
+                        <li>Base de datos: MySQL 8.0 Enterprise</li>
+                        <li>PHPMailer para gestión de correos</li>
                     </ul>
-                    <small>Ideal para empresas que prefieren pagos simplificados</small>
                 </div>
+
                 <div class="feature-box">
-                    <h3>Opción 2: Pago por etapas</h3>
+                    <h3>Infraestructura</h3>
                     <ul>
-                        <li>20% al inicio (4,480,000 CLP)</li>
-                        <li>20% al final del mes 2 (4,480,000 CLP)</li>
-                        <li>20% al final del mes 3 (4,480,000 CLP)</li>
-                        <li>40% a la entrega final (8,960,000 CLP)</li>
+                        <li>Hosting en Google Cloud Platform</li>
+                        <li>Certificado SSL/TLS incluido</li>
+                        <li>Almacenamiento SSD de alto rendimiento</li>
+                        <li>Backups automáticos diarios</li>
+                        <li>Monitoreo 24/7</li>
                     </ul>
-                    <small>Recomendada para mejor distribución del presupuesto</small>
                 </div>
+
                 <div class="feature-box">
-                    <h3>Opción 3: Pago por portal</h3>
+                    <h3>Seguridad</h3>
                     <ul>
-                        <li>Portal Oficina: Al inicio (11,200,000 CLP)</li>
-                        <li>Portal Técnico: Mes 2 (5,600,000 CLP)</li>
-                        <li>Portal Cliente: A la entrega (5,600,000 CLP)</li>
+                        <li>Encriptación de datos sensibles</li>
+                        <li>Sistema avanzado de autenticación</li>
+                        <li>Protección contra inyecciones SQL</li>
+                        <li>Control granular de accesos</li>
+                        <li>Registro detallado de actividades</li>
                     </ul>
-                    <small>Ideal para validar funcionalidades por etapas</small>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Base de Datos</h3>
+                    <ul>
+                        <li>Diseño relacional optimizado</li>
+                        <li>Normalización hasta 3FN</li>
+                        <li>Sistema de triggers para auditoría</li>
+                        <li>Respaldos incrementales</li>
+                        <li>Optimización de consultas</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Funcionalidades Detalladas -->
         <div class="section">
-            <h2>Detalle de Funcionalidades por Portal</h2>
+            <h2>Funcionalidades Detalladas</h2>
+
+            <div class="card">
+                <h3>Portal Oficina</h3>
+                <div class="grid">
+                    <div class="feature-box">
+                        <h3>Módulo de Inventario</h3>
+                        <ul>
+                            <li>Control de entrada/salida de bodega principal</li>
+                            <li>Gestión de inventarios por técnico</li>
+                            <li>Registro y control de vehículos</li>
+                            <li>Alertas de stock mínimo</li>
+                            <li>Trazabilidad completa de productos</li>
+                            <li>Reportes en Excel</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Módulo de Clientes</h3>
+                        <ul>
+                            <li>Registro detallado de clientes</li>
+                            <li>Gestión de múltiples sedes</li>
+                            <li>Historial de servicios</li>
+                            <li>Reportes personalizados</li>
+                            <li>Sistema de búsqueda avanzada</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Módulo de Contratos</h3>
+                        <ul>
+                            <li>Creación y gestión de contratos</li>
+                            <li>Asignación de técnicos</li>
+                            <li>Programación de frecuencias</li>
+                            <li>Alertas de renovación</li>
+                            <li>Exportación de reportes</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Módulo de Planificación</h3>
+                        <ul>
+                            <li>Calendario interactivo</li>
+                            <li>Drag & drop de servicios</li>
+                            <li>Control en tiempo real</li>
+                            <li>Gestión de horarios</li>
+                            <li>Optimización de rutas</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Módulo de RRHH</h3>
+                        <ul>
+                            <li>Gestión de empleados</li>
+                            <li>Control de permisos</li>
+                            <li>Documentación del personal</li>
+                            <li>Evaluación de desempeño</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Módulo Financiero</h3>
+                        <ul>
+                            <li>Dashboard con KPIs</li>
+                            <li>Control de ingresos/egresos</li>
+                            <li>Reportes financieros</li>
+                            <li>Análisis de rentabilidad</li>
+                            <li>Proyecciones</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Portal Técnico</h3>
+                <div class="grid">
+                    <div class="feature-box">
+                        <h3>Trabajos del Día</h3>
+                        <ul>
+                            <li>Lista de servicios asignados</li>
+                            <li>Cronómetro de servicios</li>
+                            <li>Formularios digitales</li>
+                            <li>Registro de productos usados</li>
+                            <li>Sistema de notas</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Inventario Personal</h3>
+                        <ul>
+                            <li>Control de stock</li>
+                            <li>Solicitud de productos</li>
+                            <li>Estadísticas de uso</li>
+                            <li>Alertas automáticas</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Agenda</h3>
+                        <ul>
+                            <li>Vista personalizable</li>
+                            <li>Detalles de servicios</li>
+                            <li>Historial completo</li>
+                            <li>Sistema de recordatorios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Portal Cliente</h3>
+                <div class="grid">
+                    <div class="feature-box">
+                        <h3>Gestión Documental</h3>
+                        <ul>
+                            <li>Certificados MINSAL</li>
+                            <li>Historial de servicios</li>
+                            <li>Sistema de descargas</li>
+                            <li>Notificaciones automáticas</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Servicios</h3>
+                        <ul>
+                            <li>Solicitud de nuevos servicios</li>
+                            <li>Seguimiento en tiempo real</li>
+                            <li>Historial detallado</li>
+                            <li>Calendario de servicios</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Estadísticas</h3>
+                        <ul>
+                            <li>Análisis de consumo</li>
+                            <li>Estadísticas por área</li>
+                            <li>Gráficos interactivos</li>
+                            <li>Exportación de datos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inversión y Pagos -->
+        <div class="section">
+            <h2>Inversión y Modalidades de Pago</h2>
             
-            <h3>Portal Oficina</h3>
-            <div class="grid">
-                <div class="feature-box">
-                    <h3>Módulo de Inventario</h3>
-                    <ul>
-                        <li>Control de entrada/salida de productos en bodega principal</li>
-                        <li>Gestión de inventarios individuales por técnico</li>
-                        <li>Registro y control de vehículos con asignación de responsables</li>
-                        <li>Sistema de alertas de stock mínimo</li>
-                        <li>Trazabilidad de productos usados en servicios</li>
-                        <li>Exportación de reportes en Excel con estadísticas de stock</li>
-                        <li>Control de formulaciones y productos utilizados</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-box">
-                    <h3>Módulo de Clientes</h3>
-                    <ul>
-                        <li>Registro completo de nuevos clientes</li>
-                        <li>Gestión de múltiples sedes por cliente</li>
-                        <li>Visualización de historial de servicios por cliente</li>
-                        <li>Exportación de estadísticas y reportes</li>
-                        <li>Panel de información detallada del cliente</li>
-                        <li>Sistema de búsqueda avanzada</li>
-                    </ul>
-                </div>
-
-                <div class="feature-box">
-                    <h3>Módulo de Contratos</h3>
-                    <ul>
-                        <li>Creación y gestión de contratos</li>
-                        <li>Asignación de técnicos y frecuencia de visitas</li>
-                        <li>Configuración de servicios y sedes por contrato</li>
-                        <li>Visualización y descarga de contratos</li>
-                        <li>Sistema de recordatorios de renovación</li>
-                        <li>Exportación de reportes estadísticos</li>
-                    </ul>
-                </div>
-
-                <div class="feature-box">
-                    <h3>Módulo de Planificación</h3>
-                    <ul>
-                        <li>Calendario interactivo con vista diaria/semanal/mensual</li>
-                        <li>Drag & drop para reasignación de servicios</li>
-                        <li>Control de estado de servicios en tiempo real</li>
-                        <li>Gestión de horarios por técnico</li>
-                        <li>Exportación de reportes de horas trabajadas</li>
-                        <li>Sistema de optimización de rutas</li>
-                    </ul>
-                </div>
-
-                <div class="feature-box">
-                    <h3>Módulo de RRHH</h3>
-                    <ul>
-                        <li>Registro y gestión de empleados</li>
-                        <li>Control de permisos y accesos</li>
-                        <li>Gestión de documentación del personal</li>
-                        <li>Edición de información de empleados</li>
-                        <li>Sistema de evaluación de desempeño</li>
-                    </ul>
-                </div>
-
-                <div class="feature-box">
-                    <h3>Módulo de Verificación</h3>
-                    <ul>
-                        <li>Revisión de servicios completados</li>
-                        <li>Validación de formularios técnicos</li>
-                        <li>Control de productos utilizados</li>
-                        <li>Generación automática de certificados MINSAL</li>
-                        <li>Sistema de envío automático por email</li>
-                        <li>Registro de observaciones y notas</li>
-                    </ul>
-                </div>
-
-                <div class="feature-box">
-                    <h3>Módulo de Gestión Financiera</h3>
-                    <ul>
-                        <li>Dashboard financiero con KPIs</li>
-                        <li>Registro y control de ingresos/egresos</li>
-                        <li>Generación de reportes en Excel/PDF</li>
-                        <li>Análisis de rentabilidad por servicio</li>
-                        <li>Control de facturación</li>
-                        <li>Proyecciones financieras</li>
-                    </ul>
-                </div>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Horas</th>
+                        <th>Valor (CLP)</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>Portal Oficina</td>
+                        <td>448</td>
+                        <td>11,200,000</td>
+                        <td>Sistema completo de gestión administrativa</td>
+                    </tr>
+                    <tr>
+                        <td>Portal Técnico</td>
+                        <td>224</td>
+                        <td>5,600,000</td>
+                        <td>Sistema operativo para técnicos</td>
+                    </tr>
+                    <tr>
+                        <td>Portal Cliente</td>
+                        <td>224</td>
+                        <td>5,600,000</td>
+                        <td>Plataforma de autogestión para clientes</td>
+                    </tr>
+                    <tr>
+                        <td>Gestión de Proyecto</td>
+                        <td>-</td>
+                        <td><span class="precio-tachado">1,680,000</span> <span class="precio-nuevo">0</span></td>
+                        <td>Coordinación y seguimiento del proyecto</td>
+                    </tr>
+                    <tr>
+                        <td>Testing y QA</td>
+                        <td>-</td>
+                        <td><span class="precio-tachado">1,680,000</span> <span class="precio-nuevo">0</span></td>
+                        <td>Control de calidad y pruebas</td>
+                    </tr>
+                    <tr>
+                        <td>Licencias Software</td>
+                        <td>-</td>
+                        <td>480,000</td>
+                        <td>MySQL Enterprise (anual)</td>
+                    </tr>
+                    <tr>
+                        <th>Total Final</th>
+                        <th>896</th>
+                        <th>22,880,000</th>
+                        <th>Sistema completo + licencias</th>
+                    </tr>
+                </table>
             </div>
 
-            <h3>Portal Técnico</h3>
+            <h3>Opciones de Pago</h3>
             <div class="grid">
                 <div class="feature-box">
-                    <h3>Módulo Trabajos del Día</h3>
+                    <h3>Opción 1: Dos Pagos</h3>
                     <ul>
-                        <li>Vista de servicios asignados del día</li>
-                        <li>Cronómetro de tiempo por servicio</li>
-                        <li>Formulario digital de servicios realizados</li>
-                        <li>Registro de productos y formulaciones usadas</li>
-                        <li>Sistema de notas y observaciones</li>
-                        <li>Envío automático al sistema de verificación</li>
+                        <li>50% inicial: 11,440,000 CLP</li>
+                        <li>50% a la entrega: 11,440,000 CLP</li>
                     </ul>
+                    <small>Ideal para pagos simplificados</small>
                 </div>
 
                 <div class="feature-box">
-                    <h3>Módulo de Inventario</h3>
+                    <h3>Opción 2: Pagos Mensuales</h3>
                     <ul>
-                        <li>Control de stock personal</li>
-                        <li>Sistema de solicitud de productos</li>
-                        <li>Estadísticas de uso por cliente</li>
-                        <li>Alertas de stock bajo</li>
-                        <li>Historial de consumo</li>
+                        <li>20% inicial: 4,576,000 CLP</li>
+                        <li>20% mes 2: 4,576,000 CLP</li>
+                        <li>20% mes 3: 4,576,000 CLP</li>
+                        <li>40% final: 9,152,000 CLP</li>
                     </ul>
+                    <small>Facilita la distribución del presupuesto</small>
                 </div>
 
                 <div class="feature-box">
-                    <h3>Módulo de Agenda</h3>
+                    <h3>Opción 3: Por Portal</h3>
                     <ul>
-                        <li>Vista calendario personalizable</li>
-                        <li>Detalle de servicios programados</li>
-                        <li>Información completa de cada servicio</li>
-                        <li>Historial de servicios realizados</li>
-                        <li>Sistema de recordatorios</li>
+                        <li>Portal Oficina: 11,440,000 CLP</li>
+                        <li>Portal Técnico: 5,720,000 CLP</li>
+                        <li>Portal Cliente: 5,720,000 CLP</li>
                     </ul>
-                </div>
-            </div>
-
-            <h3>Portal Cliente</h3>
-            <div class="grid">
-                <div class="feature-box">
-                    <h3>Módulo Gestión Documentos</h3>
-                    <ul>
-                        <li>Acceso a certificados MINSAL</li>
-                        <li>Historial de certificaciones</li>
-                        <li>Sistema de descarga de documentos</li>
-                        <li>Notificaciones de nuevos documentos</li>
-                        <li>Organización por fecha y tipo</li>
-                    </ul>
-                </div>
-
-                <div class="feature-box">
-                    <h3>Módulo de Servicios</h3>
-                    <ul>
-                        <li>Visualización de servicios pasados y futuros</li>
-                        <li>Sistema de solicitud de nuevos servicios</li>
-                        <li>Seguimiento de servicios en tiempo real</li>
-                        <li>Historial detallado de intervenciones</li>
-                        <li>Calendario de servicios programados</li>
-                    </ul>
-                </div>
-
-                <div class="feature-box">
-                    <h3>Módulo de Estadísticas</h3>
-                    <ul>
-                        <li>Análisis de consumo de productos</li>
-                        <li>Estadísticas por área de servicio</li>
-                        <li>Gráficos de tendencias</li>
-                        <li>Reportes personalizables</li>
-                        <li>Exportación de datos</li>
-                    </ul>
+                    <small>Permite validar por etapas</small>
                 </div>
             </div>
         </div>
 
+        <!-- Cronograma -->
         <div class="section">
             <h2>Cronograma de Desarrollo</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <h3>Mes 1: Portal Oficina</h3>
                     <ul>
-                        <li>Módulo de Inventario</li>
-                        <li>Módulo de Clientes</li>
-                        <li>Módulo de Contratos</li>
-                        <li>Módulo de Planificación</li>
-                        <li>Módulo de RRHH</li>
-                        <li>Módulo de Verificación</li>
-                        <li>Módulo de Gestión Financiera</li>
+                        <li>Desarrollo de módulos base</li>
+                        <li>Implementación de sistema de usuarios</li>
+                        <li>Configuración de base de datos</li>
+                        <li>Desarrollo de módulos principales</li>
                     </ul>
                 </div>
                 <div class="timeline-item">
                     <h3>Mes 2: Portal Técnico</h3>
                     <ul>
-                        <li>Módulo Trabajos del Día</li>
-                        <li>Módulo de Inventario</li>
-                        <li>Módulo de Agenda</li>
+                        <li>Desarrollo de interfaz móvil</li>
+                        <li>Implementación de formularios</li>
+                        <li>Sistema de geolocalización</li>
+                        <li>Integración con Portal Oficina</li>
                     </ul>
                 </div>
                 <div class="timeline-item">
                     <h3>Mes 3: Portal Cliente</h3>
                     <ul>
-                        <li>Módulo Gestión Documentos</li>
-                        <li>Módulo de Servicios</li>
-                        <li>Módulo de Estadísticas</li>
+                        <li>Desarrollo de área cliente</li>
+                        <li>Sistema de documentos</li>
+                        <li>Módulo de estadísticas</li>
+                        <li>Integración completa</li>
                     </ul>
                 </div>
                 <div class="timeline-item">
                     <h3>Mes 4: Finalización</h3>
                     <ul>
-                        <li>Testing integral</li>
-                        <li>Implementación</li>
-                        <li>Capacitación</li>
-                        <li>Documentación</li>
-                        <li>Entrega final</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section pricing-details">
-            <h2>Desglose de Inversión</h2>
-            <table>
-                <tr>
-                    <th>Componente</th>
-                    <th>Horas</th>
-                    <th>Valor (CLP)</th>
-                    <th>Descripción</th>
-                </tr>
-                <tr>
-                    <td>Portal Oficina</td>
-                    <td>448</td>
-                    <td>11,200,000</td>
-                    <td>Desarrollo completo de los 7 módulos principales, incluyendo el módulo de gestión financiera con acceso exclusivo.</td>
-                </tr>
-                <tr>
-                    <td>Portal Técnico</td>
-                    <td>224</td>
-                    <td>5,600,000</td>
-                    <td>Implementación de módulos para gestión de trabajo diario, inventario y agenda de técnicos.</td>
-                </tr>
-                <tr>
-                    <td>Portal Cliente</td>
-                    <td>224</td>
-                    <td>5,600,000</td>
-                    <td>Desarrollo de interfaz cliente con gestión documental, servicios y estadísticas.</td>
-                </tr>
-                <tr>
-                    <td>Gestión de Proyecto</td>
-                    <td>-</td>
-                    <td><span class="precio-tachado">1,680,000</span> <span class="precio-nuevo">0</span></td>
-                    <td>Coordinación, planificación y seguimiento del proyecto, reuniones de avance, gestión de requerimientos.</td>
-                </tr>
-                <tr>
-                    <td>Testing y QA</td>
-                    <td>-</td>
-                    <td><span class="precio-tachado">1,680,000</span> <span class="precio-nuevo">0</span></td>
-                    <td>Pruebas exhaustivas de funcionalidad, seguridad, rendimiento y experiencia de usuario.</td>
-                </tr>
-                <tr>
-                    <td>Licencias y Software</td>
-                    <td>-</td>
-                    <td>480,000</td>
-                    <td>MySQL Enterprise Edition (anual), incluye soporte y actualizaciones</td>
-                </tr>
-                <tr class="descuento-row">
-                    <th>Total con Descuento</th>
-                    <th>896</th>
-                    <th>22,880,000</th>
-                    <th>Sistema completo con 3 portales integrados + licencias</th>
-                </tr>
-            </table>
-        </div>
-
-        <div class="section">
-            <h2>Especificaciones Técnicas</h2>
-            <div class="grid">
-                <div class="feature-box">
-                    <h3>Tecnologías del Sistema</h3>
-                    <ul>
-                        <li>Backend: PHP 8</li>
-                        <li>Frontend: HTML5, CSS3, JavaScript</li>
-                        <li>Framework CSS: Bootstrap 5</li>
-                        <li>Base de datos: MySQL 8.0</li>
-                        <li>Librería de correos: PHPMailer</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h3>Base de Datos</h3>
-                    <ul>
-                        <li>Modelado relacional optimizado</li>
-                        <li>Normalización hasta 3FN</li>
-                        <li>Triggers para auditoría</li>
-                        <li>Respaldos automáticos</li>
-                        <li>Optimización de consultas</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h3>Infraestructura</h3>
-                    <ul>
-                        <li>Hosting: Google Cloud Platform</li>
-                        <li>Subdominio: sistema.ecosanplagas.cl</li>
-                        <li>Certificado SSL incluido</li>
-                        <li>Almacenamiento SSD</li>
-                        <li>Escalabilidad vertical</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h3>Sistema de Acceso</h3>
-                    <ul>
-                        <li>Login seguro para cada portal</li>
-                        <li>Gestión de roles y permisos</li>
-                        <li>Recuperación de contraseñas</li>
-                        <li>Registro de accesos</li>
-                        <li>Bloqueo por intentos fallidos</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h3>Seguridad</h3>
-                    <ul>
-                        <li>Encriptación de datos sensibles</li>
-                        <li>Control de sesiones</li>
-                        <li>Prevención de SQL Injection</li>
-                        <li>Control de acceso por rol</li>
-                        <li>Logs de actividad</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Inclusiones y Garantías</h2>
-            <div class="grid">
-                <div class="feature-box">
-                    <h3>Desarrollo Completo</h3>
-                    <ul>
-                        <li>3 portales interconectados</li>
                         <li>Testing exhaustivo</li>
                         <li>Optimización de rendimiento</li>
-                        <li>Código fuente optimizado</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h3>Implementación</h3>
-                    <ul>
-                        <li>Configuración de servidores</li>
-                        <li>Despliegue del sistema</li>
-                        <li>Migración de datos básica</li>
-                        <li>Configuración inicial</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h3>Soporte y Garantía</h3>
-                    <ul>
-                        <li>3 meses de mantenimiento</li>
-                        <li>Corrección de bugs</li>
-                        <li>Soporte técnico básico</li>
-                        <li>Actualizaciones de seguridad</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h3>Entregables</h3>
-                    <ul>
-                        <li>Código fuente documentado</li>
-                        <li>Manuales completos</li>
-                        <li>Capacitación inicial</li>
-                        <li>Documentación técnica</li>
+                        <li>Capacitación del personal</li>
+                        <li>Documentación final</li>
+                        <li>Despliegue en producción</li>
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Garantías -->
+        <div class="section">
+            <h2>Garantías y Soporte</h2>
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Garantía de Desarrollo</h3>
+                    <ul>
+                        <li>Código fuente documentado</li>
+                        <li>Testing completo</li>
+                        <li>Control de versiones</li>
+                        <li>Optimización continua</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Soporte Post-Implementación</h3>
+                    <ul>
+                        <li>3 meses de soporte incluido</li>
+                        <li>Corrección de errores</li>
+                        <li>Actualizaciones de seguridad</li>
+                        <li>Soporte técnico remoto</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Capacitación</h3>
+                    <ul>
+                        <li>Sesiones de capacitación</li>
+                        <li>Manuales de usuario</li>
+                        <li>Videos tutoriales</li>
+                        <li>Guías de referencia</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Documentación</h3>
+                    <ul>
+                        <li>Manual técnico completo</li>
+                        <li>Documentación API</li>
+                        <li>Guías de mantenimiento</li>
+                        <li>Procedimientos operativos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aceptación -->
         <div class="signature-section">
-            <h2>Aceptación de la Propuesta</h2><br>
+            <h2>Aceptación de la Propuesta</h2>
+            <p>Al firmar este documento, ambas partes acuerdan los términos y condiciones establecidos en esta propuesta comercial.</p>
+            
             <div class="signature-container">
                 <div class="signature-block">
                     <p>Cliente:</p>
-                    <p><strong>Luis Acuña Bustos - EcosanPlagas</strong></p>
+                    <p><strong>Luis Acuña Bustos</strong></p>
+                    <p>EcosanPlagas</p>
                     <div class="signature-line"></div>
-                    <small>Firma Cliente</small>
+                    <small>Firma y Fecha</small>
                 </div>
+
                 <div class="signature-block">
                     <p>Desarrollador:</p>
                     <p><strong>Felipe Sepúlveda Jiménez</strong></p>
+                    <p>Desarrollador de Software</p>
                     <div class="signature-line"></div>
-                    <small>Firma Desarrollador</small>
+                    <small>Firma y Fecha</small>
                 </div>
             </div>
-            <div style="margin-top: 40px;">
+
+            <div style="margin-top: 40px; text-align: center;">
                 <p>Fecha: ___________________</p>
             </div>
         </div>
@@ -815,7 +878,8 @@
 
     <div class="footer">
         <h3>Información de Contacto</h3>
-        <p>953550896 | sepujimenez.dev@gmail.com</p>
+        <p>+56 953550896 | sepujimenez.dev@gmail.com</p>
+        <p><small>© 2024 - Todos los derechos reservados</small></p>
     </div>
 </body>
 </html>
