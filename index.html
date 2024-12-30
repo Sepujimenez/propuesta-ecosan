@@ -75,6 +75,13 @@
             font-size: 1.8em;
         }
 
+        .section h3 {
+            color: #1e3c72;
+            margin: 30px 0 20px;
+            font-weight: 600;
+            font-size: 1.4em;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -259,6 +266,20 @@
             font-weight: 300;
         }
 
+        .precio-tachado {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .precio-nuevo {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .descuento-row {
+            background-color: #e8f5e9 !important;
+        }
+
         @media print {
             body {
                 background: white;
@@ -309,19 +330,6 @@
                 font-size: 0.9em;
             }
         }
-        .precio-tachado {
-            text-decoration: line-through;
-            color: #999;
-        }
-        .precio-nuevo {
-            color: #28a745;
-            font-weight: bold;
-        
-        }
-        .descuento-row {
-            background-color: #e8f5e9 !important;
-        }
-            
     </style>
 </head>
 <body>
@@ -382,9 +390,206 @@
                         <li>Sistema propio y personalizado</li>
                         <li>Independencia de sistemas genéricos</li>
                         <li>Propiedad total del código fuente</li>
-                        <li>Adaptabilidad a cambios futuros</li>
+                        <li>Documentación técnica completa</li>
                         <li>Escalabilidad garantizada</li>
                         <li>Soporte directo y especializado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Opciones de Pago</h2>
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Opción 1: Pago en dos cuotas</h3>
+                    <ul>
+                        <li>50% al inicio del proyecto (11,200,000 CLP)</li>
+                        <li>50% a la entrega final (11,200,000 CLP)</li>
+                    </ul>
+                    <small>Ideal para empresas que prefieren pagos simplificados</small>
+                </div>
+                <div class="feature-box">
+                    <h3>Opción 2: Pago por etapas</h3>
+                    <ul>
+                        <li>20% al inicio (4,480,000 CLP)</li>
+                        <li>20% al final del mes 2 (4,480,000 CLP)</li>
+                        <li>20% al final del mes 3 (4,480,000 CLP)</li>
+                        <li>40% a la entrega final (8,960,000 CLP)</li>
+                    </ul>
+                    <small>Recomendada para mejor distribución del presupuesto</small>
+                </div>
+                <div class="feature-box">
+                    <h3>Opción 3: Pago por portal</h3>
+                    <ul>
+                        <li>Portal Oficina: Al inicio (11,200,000 CLP)</li>
+                        <li>Portal Técnico: Mes 2 (5,600,000 CLP)</li>
+                        <li>Portal Cliente: A la entrega (5,600,000 CLP)</li>
+                    </ul>
+                    <small>Ideal para validar funcionalidades por etapas</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Detalle de Funcionalidades por Portal</h2>
+            
+            <h3>Portal Oficina</h3>
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Módulo de Inventario</h3>
+                    <ul>
+                        <li>Control de entrada/salida de productos en bodega principal</li>
+                        <li>Gestión de inventarios individuales por técnico</li>
+                        <li>Registro y control de vehículos con asignación de responsables</li>
+                        <li>Sistema de alertas de stock mínimo</li>
+                        <li>Trazabilidad de productos usados en servicios</li>
+                        <li>Exportación de reportes en Excel con estadísticas de stock</li>
+                        <li>Control de formulaciones y productos utilizados</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-box">
+                    <h3>Módulo de Clientes</h3>
+                    <ul>
+                        <li>Registro completo de nuevos clientes</li>
+                        <li>Gestión de múltiples sedes por cliente</li>
+                        <li>Visualización de historial de servicios por cliente</li>
+                        <li>Exportación de estadísticas y reportes</li>
+                        <li>Panel de información detallada del cliente</li>
+                        <li>Sistema de búsqueda avanzada</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de Contratos</h3>
+                    <ul>
+                        <li>Creación y gestión de contratos</li>
+                        <li>Asignación de técnicos y frecuencia de visitas</li>
+                        <li>Configuración de servicios y sedes por contrato</li>
+                        <li>Visualización y descarga de contratos</li>
+                        <li>Sistema de recordatorios de renovación</li>
+                        <li>Exportación de reportes estadísticos</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de Planificación</h3>
+                    <ul>
+                        <li>Calendario interactivo con vista diaria/semanal/mensual</li>
+                        <li>Drag & drop para reasignación de servicios</li>
+                        <li>Control de estado de servicios en tiempo real</li>
+                        <li>Gestión de horarios por técnico</li>
+                        <li>Exportación de reportes de horas trabajadas</li>
+                        <li>Sistema de optimización de rutas</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de RRHH</h3>
+                    <ul>
+                        <li>Registro y gestión de empleados</li>
+                        <li>Control de permisos y accesos</li>
+                        <li>Gestión de documentación del personal</li>
+                        <li>Edición de información de empleados</li>
+                        <li>Sistema de evaluación de desempeño</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de Verificación</h3>
+                    <ul>
+                        <li>Revisión de servicios completados</li>
+                        <li>Validación de formularios técnicos</li>
+                        <li>Control de productos utilizados</li>
+                        <li>Generación automática de certificados MINSAL</li>
+                        <li>Sistema de envío automático por email</li>
+                        <li>Registro de observaciones y notas</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de Gestión Financiera</h3>
+                    <ul>
+                        <li>Dashboard financiero con KPIs</li>
+                        <li>Registro y control de ingresos/egresos</li>
+                        <li>Generación de reportes en Excel/PDF</li>
+                        <li>Análisis de rentabilidad por servicio</li>
+                        <li>Control de facturación</li>
+                        <li>Proyecciones financieras</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Portal Técnico</h3>
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Módulo Trabajos del Día</h3>
+                    <ul>
+                        <li>Vista de servicios asignados del día</li>
+                        <li>Cronómetro de tiempo por servicio</li>
+                        <li>Formulario digital de servicios realizados</li>
+                        <li>Registro de productos y formulaciones usadas</li>
+                        <li>Sistema de notas y observaciones</li>
+                        <li>Envío automático al sistema de verificación</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de Inventario</h3>
+                    <ul>
+                        <li>Control de stock personal</li>
+                        <li>Sistema de solicitud de productos</li>
+                        <li>Estadísticas de uso por cliente</li>
+                        <li>Alertas de stock bajo</li>
+                        <li>Historial de consumo</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de Agenda</h3>
+                    <ul>
+                        <li>Vista calendario personalizable</li>
+                        <li>Detalle de servicios programados</li>
+                        <li>Información completa de cada servicio</li>
+                        <li>Historial de servicios realizados</li>
+                        <li>Sistema de recordatorios</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Portal Cliente</h3>
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Módulo Gestión Documentos</h3>
+                    <ul>
+                        <li>Acceso a certificados MINSAL</li>
+                        <li>Historial de certificaciones</li>
+                        <li>Sistema de descarga de documentos</li>
+                        <li>Notificaciones de nuevos documentos</li>
+                        <li>Organización por fecha y tipo</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de Servicios</h3>
+                    <ul>
+                        <li>Visualización de servicios pasados y futuros</li>
+                        <li>Sistema de solicitud de nuevos servicios</li>
+                        <li>Seguimiento de servicios en tiempo real</li>
+                        <li>Historial detallado de intervenciones</li>
+                        <li>Calendario de servicios programados</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Módulo de Estadísticas</h3>
+                    <ul>
+                        <li>Análisis de consumo de productos</li>
+                        <li>Estadísticas por área de servicio</li>
+                        <li>Gráficos de tendencias</li>
+                        <li>Reportes personalizables</li>
+                        <li>Exportación de datos</li>
                     </ul>
                 </div>
             </div>
@@ -473,14 +678,21 @@
                     <td><span class="precio-tachado">1,680,000</span> <span class="precio-nuevo">0</span></td>
                     <td>Pruebas exhaustivas de funcionalidad, seguridad, rendimiento y experiencia de usuario.</td>
                 </tr>
+                <tr>
+                    <td>Licencias y Software</td>
+                    <td>-</td>
+                    <td>480,000</td>
+                    <td>MySQL Enterprise Edition (anual), incluye soporte y actualizaciones</td>
+                </tr>
                 <tr class="descuento-row">
                     <th>Total con Descuento</th>
                     <th>896</th>
-                    <th>22,400,000</th>
-                    <th>Sistema completo con 3 portales integrados</th>
+                    <th>22,880,000</th>
+                    <th>Sistema completo con 3 portales integrados + licencias</th>
                 </tr>
             </table>
         </div>
+
         <div class="section">
             <h2>Especificaciones Técnicas</h2>
             <div class="grid">
@@ -512,6 +724,16 @@
                         <li>Certificado SSL incluido</li>
                         <li>Almacenamiento SSD</li>
                         <li>Escalabilidad vertical</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>Sistema de Acceso</h3>
+                    <ul>
+                        <li>Login seguro para cada portal</li>
+                        <li>Gestión de roles y permisos</li>
+                        <li>Recuperación de contraseñas</li>
+                        <li>Registro de accesos</li>
+                        <li>Bloqueo por intentos fallidos</li>
                     </ul>
                 </div>
                 <div class="feature-box">
@@ -568,6 +790,7 @@
                 </div>
             </div>
         </div>
+
         <div class="signature-section">
             <h2>Aceptación de la Propuesta</h2><br>
             <div class="signature-container">
