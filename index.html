@@ -24,12 +24,19 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.7;
             color: var(--text-color);
             background-color: var(--light-gray);
             font-size: 14px;
+            min-height: 100vh;
         }
 
         .cover {
@@ -40,6 +47,7 @@
             position: relative;
             margin-bottom: 60px;
             box-shadow: var(--shadow-lg);
+            width: 100%;
         }
 
         .cover::after {
@@ -76,9 +84,12 @@
         }
 
         .container {
+            width: 100%;
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 30px;
+            position: relative;
+            overflow: hidden;
         }
 
         .section {
@@ -87,6 +98,7 @@
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: var(--shadow-md);
+            width: 100%;
         }
 
         .section:hover {
@@ -123,8 +135,10 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; /* Antes: 30px */
+            gap: 20px;
+            width: 100%;
             margin: 30px 0;
+            overflow: hidden;
         }
 
         .feature-box {
