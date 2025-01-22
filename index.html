@@ -1,64 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta ZENTINEL - EcosanPlagas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
         }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #F8F9FA;
-            line-height: 1.7;
-            color: #2C3E50;
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
-
-        .message-container {
-            text-align: center;
-            padding: 40px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            max-width: 600px;
-            width: 90%;
-            margin: 20px;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #2C3E50;
-        }
-
-        p {
-            font-size: 1.1em;
-            color: #2C3E50;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .message-container {
-                padding: 30px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
     </style>
 </head>
-<body>
-    <div class="message-container">
-        <h1>Propuesta no disponible por el momento</h1>
-        <p>Gracias por su interés.</p>
+<body class="bg-light">
+    <div class="bg-gradient-primary text-white py-5">
+        <div class="container">
+            <h1 class="display-5">Propuesta Comercial ZENTINEL</h1>
+            <p class="lead mb-0">Sistema de Gestión para Control de Plagas</p>
+            <p>Preparado para: EcosanPlagas | Enero 2025</p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Desglose del Proyecto</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">1. Configuración Inicial</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Valor: $1,000,000</span>
+                            <span>40 horas</span>
+                        </div>
+                        <ul>
+                            <li>Setup proyecto</li>
+                            <li>Configuración Supabase</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">2. Portal Oficina</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Valor: $2,500,000</span>
+                            <span>100 horas</span>
+                        </div>
+                        <ul>
+                            <li>Auth system</li>
+                            <li>Gestión servicios</li>
+                            <li>Calendario drag&drop</li>
+                            <li>Control inventario</li>
+                            <li>Verificación formularios</li>
+                            <li>Generación certificados</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">3. Portal Técnico</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Valor: $2,000,000</span>
+                            <span>80 horas</span>
+                        </div>
+                        <ul>
+                            <li>PWA offline</li>
+                            <li>Formularios</li>
+                            <li>Control stock</li>
+                            <li>Firma digital</li>
+                            <li>Geolocalización</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">4. Módulo Certificados</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Valor: $1,000,000</span>
+                            <span>40 horas</span>
+                        </div>
+                        <ul>
+                            <li>Templates</li>
+                            <li>Correlativo configurable</li>
+                            <li>Envío automático</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">5. Reportes/Analytics</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Valor: $500,000</span>
+                            <span>20 horas</span>
+                        </div>
+                        <ul>
+                            <li>Tendencias productos</li>
+                            <li>Dashboards</li>
+                            <li>Exportación datos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4>Total Proyecto</h4>
+                                <p class="text-muted mb-0">280 horas totales</p>
+                            </div>
+                            <h3 class="mb-0">$7,000,000</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 2rem;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Planes de Pago</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h6>3 cuotas</h6>
+                            <p class="mb-0">$2,333,333/mes</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6>6 cuotas</h6>
+                            <p class="mb-0">$1,166,666/mes</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6>12 cuotas</h6>
+                            <p class="mb-0">$583,333/mes</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6>16 cuotas</h6>
+                            <p class="mb-0">$437,500/mes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h4>Notas:</h4>
+            <ul>
+                <li>Tiempo estimado de desarrollo: 4 meses</li>
+                <li>Incluye implementación en subdominio del cliente</li>
+                <li>Base de datos en Google Cloud (por definir)</li>
+                <li>3 meses de soporte post-implementación incluidos</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
