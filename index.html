@@ -3,175 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta ZENTINEL - EcosanPlagas</title>
+    <title>Sistema Personalizado EcoSanPlagas - Propuesta</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #06b6d4;
+            --success: #059669;
         }
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        
+        .bg-gradient-premium {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
         }
+        
         .card {
             border: none;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--success), var(--accent));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .module-card {
+            border-left: 4px solid var(--primary);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .benefit-card:hover .text-primary {
+            color: white !important;
         }
     </style>
 </head>
 <body class="bg-light">
-    <div class="bg-gradient-primary text-white py-5">
+    <!-- Hero Section -->
+    <div class="bg-gradient-premium text-white py-5">
         <div class="container">
-            <h1 class="display-5">Propuesta Comercial ZENTINEL</h1>
-            <p class="lead mb-0">Sistema de Gestión para Control de Plagas</p>
-            <p>Preparado para: EcosanPlagas | Enero 2025</p>
-        </div>
-    </div>
-
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <h2 class="mb-4">Desglose del Proyecto</h2>
-                
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">1. Configuración Inicial</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Valor: $1,000,000</span>
-                            <span>40 horas</span>
-                        </div>
-                        <ul>
-                            <li>Setup proyecto</li>
-                            <li>Configuración Supabase</li>
-                            <li>CI/CD</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">2. Portal Oficina</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Valor: $2,500,000</span>
-                            <span>100 horas</span>
-                        </div>
-                        <ul>
-                            <li>Auth system</li>
-                            <li>Gestión servicios</li>
-                            <li>Calendario drag&drop</li>
-                            <li>Control inventario</li>
-                            <li>Verificación formularios</li>
-                            <li>Generación certificados</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">3. Portal Técnico</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Valor: $2,000,000</span>
-                            <span>80 horas</span>
-                        </div>
-                        <ul>
-                            <li>PWA offline</li>
-                            <li>Formularios</li>
-                            <li>Control stock</li>
-                            <li>Firma digital</li>
-                            <li>Geolocalización</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">4. Módulo Certificados</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Valor: $1,000,000</span>
-                            <span>40 horas</span>
-                        </div>
-                        <ul>
-                            <li>Templates</li>
-                            <li>Correlativo configurable</li>
-                            <li>Envío automático</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">5. Reportes/Analytics</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Valor: $500,000</span>
-                            <span>20 horas</span>
-                        </div>
-                        <ul>
-                            <li>Tendencias productos</li>
-                            <li>Dashboards</li>
-                            <li>Exportación datos</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h4>Total Proyecto</h4>
-                                <p class="text-muted mb-0">280 horas totales</p>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Sistema Integral Control de Plagas</h1>
+                    <p class="lead mb-4">Sistema Integral de Gestión para Control de Plagas</p>
+                    <div class="row g-4 mt-3">
+                        <div class="col-md-4">
+                            <div class="stat-card p-3 rounded">
+                                <h3 class="mb-0">280</h3>
+                                <p class="mb-0">Horas de Desarrollo</p>
                             </div>
-                            <h3 class="mb-0">$7,000,000</h3>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card p-3 rounded">
+                                <h3 class="mb-0">4</h3>
+                                <p class="mb-0">Meses Estimados</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card p-3 rounded">
+                                <h3 class="mb-0">5</h3>
+                                <p class="mb-0">Módulos Core</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4">
-                <div class="card sticky-top" style="top: 2rem;">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Planes de Pago</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <h6>3 cuotas</h6>
-                            <p class="mb-0">$2,333,333/mes</p>
-                        </div>
-                        <div class="mb-3">
-                            <h6>6 cuotas</h6>
-                            <p class="mb-0">$1,166,666/mes</p>
-                        </div>
-                        <div class="mb-3">
-                            <h6>12 cuotas</h6>
-                            <p class="mb-0">$583,333/mes</p>
-                        </div>
-                        <div class="mb-3">
-                            <h6>16 cuotas</h6>
-                            <p class="mb-0">$437,500/mes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-5">
-            <h4>Notas:</h4>
-            <ul>
-                <li>Tiempo estimado de desarrollo: 4 meses</li>
-                <li>Incluye implementación en subdominio del cliente</li>
-                <li>Base de datos en Google Cloud (por definir)</li>
-                <li>3 meses de soporte post-implementación incluidos</li>
-            </ul>
         </div>
     </div>
+
+    <!-- Módulos -->
+    <div class="container my-5">
+        <h2 class="mb-4">Desglose del Proyecto</h2>
+        <div class="row g-4">
+            <!-- Configuración Inicial -->
+            <div class="col-lg-6">
+                <div class="card h-100 module-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs fa-lg"></i>
+                        </div>
+                        <h4 class="text-primary">Configuración Inicial</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="h5 mb-0">$1,000,000</span>
+                            <span class="badge bg-primary">40 horas</span>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 15%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Setup proyecto</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Configuración Supabase</li>
+                            <li><i class="fas fa-check text-success me-2"></i>CI/CD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portal Oficina -->
+            <div class="col-lg-6">
+                <div class="card h-100 module-card">
+                    <div class="pricing-badge">Core</div>
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-building fa-lg"></i>
+                        </div>
+                        <h4 class="text-primary">Portal Oficina</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="h5 mb-0">$2,500,000</span>
+                            <span class="badge bg-primary">100 horas</span>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 35%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Auth system</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Gestión servicios</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Calendario drag&drop</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Control inventario</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Verificación formularios</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Generación certificados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portal Técnico -->
+            <div class="col-lg-6">
+                <div class="card h-100 module-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt fa-lg"></i>
+                        </div>
+                        <h4 class="text-primary">Portal Técnico</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="h5 mb-0">$2,000,000</span>
+                            <span class="badge bg-primary">80 horas</span>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 30%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>PWA offline</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Formularios</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Control stock</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Firma digital</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Geolocalización</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Módulo Certificados -->
+            <div class="col-lg-6">
+                <div class="card h-100 module-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate fa-lg"></i>
+                        </div>
+                        <h4 class="text-primary">Módulo Certificados</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="h5 mb-0">$1,000,000</span>
+                            <span class="badge bg-primary">40 horas</span>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 15%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Templates personalizados</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Correlativo configurable</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Envío automático</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Módulo Reportes -->
+            <div class="col-lg-6">
+                <div class="card h-100 module-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar fa-lg"></i>
+                        </div>
+                        <h4 class="text-primary">Reportes/Analytics</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="h5 mb-0">$500,000</span>
+                            <span class="badge bg-primary">20 horas</span>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 5%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Tendencias productos</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Dashboards interactivos</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Exportación datos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ... -->
+
+        </div>
+    </div>
+
+    <!-- Beneficios -->
+    <div class="container my-5">
+        <h2 class="mb-4">Beneficios Clave</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="benefit-card p-4">
+                    <i class="fas fa-rocket fa-2x text-primary mb-3"></i>
+                    <h5>Eficiencia Operativa</h5>
+                    <p class="mb-0">Reduce tiempos administrativos en un 60%</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="benefit-card p-4">
+                    <i class="fas fa-chart-line fa-2x text-primary mb-3"></i>
+                    <h5>Control Total</h5>
+                    <p class="mb-0">Seguimiento en tiempo real de servicios e inventario</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="benefit-card p-4">
+                    <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
+                    <h5>Cumplimiento</h5>
+                    <p class="mb-0">Certificados y documentación automatizada</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Planes de Pago -->
+    <div class="container my-5">
+        <h2 class="mb-4">Planes de Pago Flexibles</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="text-primary">3 cuotas</h5>
+                        <h3 class="mb-3">$2,333,333</h3>
+                        <p class="text-muted">mensual</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Pago rápido</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Menor costo total</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="text-primary">6 cuotas</h5>
+                        <h3 class="mb-3">$1,166,666</h3>
+                        <p class="text-muted">mensual</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Balance ideal</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Cuota moderada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="pricing-badge">Recomendado</div>
+                    <div class="card-body">
+                        <h5 class="text-primary">12 cuotas</h5>
+                        <h3 class="mb-3">$583,333</h3>
+                        <p class="text-muted">mensual</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 50%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Cuota accesible</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Mayor flexibilidad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="text-primary">16 cuotas</h5>
+                        <h3 class="mb-3">$437,500</h3>
+                        <p class="text-muted">mensual</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 25%"></div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Cuota mínima</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Máxima flexibilidad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="container my-5">
+       <h2 class="mb-4">Cronograma de Implementación</h2>
+       <div class="timeline">
+           <div class="timeline-item p-4 mb-4">
+               <h5>Mes 1: Base y Portal Oficina</h5>
+               <ul class="list-unstyled">
+                   <li><i class="fas fa-circle text-primary me-2"></i>Setup inicial del proyecto</li>
+                   <li><i class="fas fa-circle text-primary me-2"></i>Configuración de infraestructura</li>
+                   <li><i class="fas fa-circle text-primary me-2"></i>Desarrollo core del Portal Oficina</li>
+               </ul>
+           </div>
+    
+           <div class="timeline-item p-4 mb-4">
+               <h5>Mes 2: Portal Técnico</h5>
+               <ul class="list-unstyled">
+                   <li><i class="fas fa-circle text-primary me-2"></i>Desarrollo app móvil PWA</li>
+                   <li><i class="fas fa-circle text-primary me-2"></i>Implementación trabajo offline</li>
+                   <li><i class="fas fa-circle text-primary me-2"></i>Integración con Portal Oficina</li>
+               </ul>
+           </div>
+    
+           <div class="timeline-item p-4 mb-4">
+               <h5>Mes 3: Certificados y Reportes</h5>
+               <ul class="list-unstyled">
+                   <li><i class="fas fa-circle text-primary me-2"></i>Sistema de certificados</li>
+                   <li><i class="fas fa-circle text-primary me-2"></i>Dashboard analytics</li>
+                   <li><i class="fas fa-circle text-primary me-2"></i>Testing y optimización</li>
+               </ul>
+           </div>
+    
+           <div class="timeline-item p-4">
+               <h5>Mes 4: Finalización</h5>
+               <ul class="list-unstyled">
+                   <li><i class="fas fa-circle text-primary me-2"></i>Testing completo</li>
+                   <li><i class="fas fa-circle text-primary me-2"></i>Capacitación</li>
+                   <li><i class="fas fa-circle text-primary me-2"></i>Deployment final</li>
+               </ul>
+           </div>
+       </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gradient-premium text-white py-5 mt-5">
+       <div class="container">
+           <div class="row align-items-center">
+               <div class="col-lg-8">
+                   <h3>¿Listo para optimizar su empresa?</h3>
+                   <p class="lead mb-0">Contáctenos para iniciar la transformación digital de su negocio</p>
+               </div>
+               <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                   <p class="mb-0">sepujimenez.dev@gmail.com</p>
+                   <p class="mb-0">+56 953550896</p>
+               </div>
+           </div>
+       </div>
+    </footer>
 </body>
 </html>
