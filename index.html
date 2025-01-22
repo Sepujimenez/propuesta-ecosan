@@ -22,7 +22,7 @@
 
         .hero-section {
             background: linear-gradient(45deg, #1a1a1a, #333333);
-            padding: 120px 0;
+            padding: 100px 0;
         }
 
         .card {
@@ -32,37 +32,19 @@
             transition: transform 0.3s ease;
         }
 
-        .module-card {
+        .portal-card {
             border-left: 3px solid var(--accent);
         }
 
-        .icon-box {
-            width: 48px;
-            height: 48px;
-            background: rgba(0,102,204,0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            margin-bottom: 1rem;
+        .module-section {
+            margin-left: 2rem;
+            padding-left: 1rem;
+            border-left: 2px solid rgba(0,102,204,0.2);
         }
 
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent);
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            color: #666;
         }
     </style>
 </head>
@@ -79,81 +61,101 @@
         </div>
     </div>
 
-    <!-- Módulos -->
+    <!-- Portales -->
     <div class="container my-5">
-        <div class="row g-4">
-            <div class="col-12 mb-4">
-                <h2 class="h3">Componentes del Sistema</h2>
-            </div>
-            
-            <!-- Módulos individuales -->
-            <div class="col-md-6">
-                <div class="card module-card h-100">
-                    <div class="card-body">
-                        <div class="icon-box">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h4>Portal Administración</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">• Control centralizado</li>
-                            <li class="mb-2">• Gestión de servicios</li>
-                            <li class="mb-2">• Administración de inventario</li>
-                            <li>• Reportes automatizados</li>
-                        </ul>
-                    </div>
+        <!-- Portal Oficina -->
+        <div class="card portal-card mb-5">
+            <div class="card-body p-4">
+                <h3 class="mb-4">Portal Oficina</h3>
+                
+                <!-- Gestión de Servicios -->
+                <div class="module-section mb-4">
+                    <h5 class="text-primary mb-3">Gestión de Servicios</h5>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Registro de solicitudes (problema, cliente, sede)</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Programación de servicios (fecha, hora, frecuencia)</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Calendario con vista mensual/semanal/diaria</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Asignación de técnicos</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Gestión drag&drop de servicios</li>
+                    </ul>
+                </div>
+
+                <!-- Control de Inventario -->
+                <div class="module-section mb-4">
+                    <h5 class="text-primary mb-3">Control de Inventario</h5>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Stock bodega principal</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Stock por técnico</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Control de movimientos</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Alertas de stock bajo</li>
+                    </ul>
+                </div>
+
+                <!-- Verificación y Certificación -->
+                <div class="module-section">
+                    <h5 class="text-primary mb-3">Verificación y Certificación</h5>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Revisión de formularios técnicos</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Generación de certificados</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Correlativo configurable</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Envío automático a clientes</li>
+                    </ul>
                 </div>
             </div>
+        </div><!-- Portal Técnico -->
+        <div class="card portal-card mb-5">
+            <div class="card-body p-4">
+                <h3 class="mb-4">Portal Técnico (App Móvil)</h3>
+                
+                <!-- Gestión de Trabajo -->
+                <div class="module-section mb-4">
+                    <h5 class="text-primary mb-3">Gestión de Trabajo</h5>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Vista de servicios asignados</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Información de cliente/sede</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Iniciar/finalizar servicios</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Trabajo offline</li>
+                    </ul>
+                </div>
 
-            <!-- Portal Técnico -->
-            <div class="col-md-6">
-                <div class="card module-card h-100">
-                    <div class="card-body">
-                        <div class="icon-box">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h4>Portal Técnico</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">• Aplicación móvil</li>
-                            <li class="mb-2">• Trabajo offline</li>
-                            <li class="mb-2">• Control de inventario personal</li>
-                            <li>• Registro de servicios</li>
-                        </ul>
-                    </div>
+                <!-- Formularios Digitales -->
+                <div class="module-section mb-4">
+                    <h5 class="text-primary mb-3">Formularios Digitales</h5>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Registro de plagas identificadas</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Productos utilizados (concentración, ISP)</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Método de aplicación y dosificación</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Observaciones y recomendaciones</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Firma del cliente</li>
+                    </ul>
+                </div>
+
+                <!-- Control Stock Personal -->
+                <div class="module-section">
+                    <h5 class="text-primary mb-3">Control Stock Personal</h5>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Visualización de inventario</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Registro de productos usados</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Solicitud de reposición</li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Certificados -->
-            <div class="col-md-6">
-                <div class="card module-card h-100">
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="mb-4">Infraestructura</h3>
+                <div class="card">
                     <div class="card-body">
-                        <div class="icon-box">
-                            <i class="fas fa-certificate"></i>
+                        <div class="module-section">
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Sistema en subdominio personalizado</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Base de datos en Google Cloud</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Copias de seguridad automáticas</li>
+                                <li><i class="fas fa-check text-success me-2"></i>SSL incluido</li>
+                            </ul>
                         </div>
-                        <h4>Gestión Documental</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">• Certificados automáticos</li>
-                            <li class="mb-2">• Control de correlativos</li>
-                            <li class="mb-2">• Envío automático</li>
-                            <li>• Histórico digital</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Reportes -->
-            <div class="col-md-6">
-                <div class="card module-card h-100">
-                    <div class="card-body">
-                        <div class="icon-box">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h4>Analytics</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">• Dashboard personalizado</li>
-                            <li class="mb-2">• Reportes avanzados</li>
-                            <li class="mb-2">• Análisis de tendencias</li>
-                            <li>• Exportación de datos</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -161,68 +163,93 @@
     </div>
 
     <!-- Inversión -->
-    <div class="container my-5 py-5 bg-white">
+    <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="h3 mb-5">Inversión y Financiamiento</h2>
+                <h3 class="mb-5">Inversión y Financiamiento</h3>
                 <div class="card border-0 bg-light p-4 mb-5">
                     <h3 class="display-4 mb-0">$7,000,000</h3>
                     <p class="text-muted">Inversión total</p>
                 </div>
+                
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5>3 Cuotas</h5>
+                                <p class="display-6 mb-0">$2,333,333</p>
+                                <p class="text-muted">mensual</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5>6 Cuotas</h5>
+                                <p class="display-6 mb-0">$1,166,666</p>
+                                <p class="text-muted">mensual</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5>12 Cuotas</h5>
+                                <p class="display-6 mb-0">$583,333</p>
+                                <p class="text-muted">mensual</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5>3 Cuotas</h5>
-                        <p class="display-6 mb-0">$2,333,333</p>
-                        <p class="text-muted">mensual</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5>6 Cuotas</h5>
-                        <p class="display-6 mb-0">$1,166,666</p>
-                        <p class="text-muted">mensual</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5>12 Cuotas</h5>
-                        <p class="display-6 mb-0">$583,333</p>
-                        <p class="text-muted">mensual</p>
+    </div>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="mb-4">Garantías</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="module-section">
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>3 meses de soporte post-implementación</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Capacitación completa incluida</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Documentación técnica</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Código fuente incluido</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Timeline -->
+    <!-- Proceso de Implementación -->
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <h2 class="h3 mb-4">Proceso de Implementación</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h5>Fase 1: Configuración</h5>
-                        <p class="text-muted">Setup inicial y desarrollo base</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5>Fase 2: Portal Principal</h5>
-                        <p class="text-muted">Desarrollo del sistema central</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5>Fase 3: App Móvil</h5>
-                        <p class="text-muted">Implementación portal técnico</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5>Fase 4: Finalización</h5>
-                        <p class="text-muted">Testing y capacitación</p>
+                <h3 class="mb-4">Proceso de Implementación</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="module-section">
+                            <p class="mb-4"><strong>Tiempo estimado: 4 meses</strong></p>
+                            <div class="mb-3">
+                                <h5 class="text-primary">Fase 1: Configuración</h5>
+                                <p class="text-muted">Setup inicial y configuración base</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5 class="text-primary">Fase 2: Portal Oficina</h5>
+                                <p class="text-muted">Desarrollo del sistema administrativo</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5 class="text-primary">Fase 3: Portal Técnico</h5>
+                                <p class="text-muted">Desarrollo e implementación de app móvil</p>
+                            </div>
+                            <div>
+                                <h5 class="text-primary">Fase 4: Finalización</h5>
+                                <p class="text-muted">Testing y capacitación del personal</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
