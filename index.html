@@ -15,20 +15,20 @@
             --text-light: #94a3b8;
             --gradient: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
         }
-    
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--primary);
             background-color: #f8fafc;
         }
-    
+
         .bg-gradient-premium {
             background: var(--gradient);
             position: relative;
             overflow: hidden;
         }
-    
+
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -37,7 +37,7 @@
             bottom: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.857 8.485 15.272 9.9l7.9-7.9h-.83zm5.657 0L19.514 8.485 20.93 9.9l8.485-8.485h-1.415zM32.372 0L26.8 5.657 28.214 7.07 34.8 0h-2.427zm5.657 0l-6.485 6.485L33.03 7.9l6.485-6.485h-1.415zm5.657 0l-7.071 7.071 1.415 1.415L45.8 0h-2.114zM50.542 0l-8.485 8.485 1.414 1.414L52.8 0h-2.257zM44.886 0L35.3 9.586l1.414 1.414L47.8 0h-2.914zm5.656 0L39.543 10.9l1.414 1.414L53.8 0h-3.258zM48.457 0L37.557 10.9l1.414 1.414L54.8 0h-6.343zm2.828 0L38.972 12.314l1.414 1.414L55.8 0h-4.515zm-39.8 0l13.514 13.514-1.414 1.414L5.657 0H11.4zm-3.272 0L24.857 13.514l-1.414 1.414L3.543 0h7.6zm-3.271 0l20.457 20.457-1.414 1.414L0 2.544V0h4.857zM0 5.373L28.457 33.83l-1.414 1.414L0 8.2V5.374zm0 5.656l26.457 26.457-1.414 1.414L0 13.857v-2.828zm0 5.657l24.457 24.457-1.414 1.414L0 19.514v-2.828zm0 5.657l22.457 22.457-1.414 1.414L0 25.17v-2.828zm0 5.657l20.457 20.457-1.414 1.414L0 30.828v-2.828zm0 5.657l18.457 18.457-1.414 1.414L0 36.485v-2.828zm0 5.657l16.457 16.457-1.414 1.414L0 42.142v-2.828zm0 5.657l14.457 14.457-1.414 1.414L0 47.8v-2.828zm0 5.657l12.457 12.457-1.414 1.414L0 53.456v-2.828zm0 5.657l10.457 10.457-1.414 1.414L0 59.113v-2.828zm0 5.657l8.457 8.457-1.414 1.414L0 64.77v-2.828zm0 5.657l6.457 6.457-1.414 1.414L0 70.427v-2.828zm0 5.657l4.457 4.457-1.414 1.414L0 76.084v-2.828zm0 5.657l2.457 2.457-1.414 1.414L0 81.741v-2.828z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
-    
+
         .card {
             border: none;
             background: #ffffff;
@@ -46,7 +46,7 @@
             border-radius: 16px;
             overflow: hidden;
         }
-    
+
         .stat-card {
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
@@ -68,76 +68,9 @@
                         <h2 class="h1 mb-3">$7,000,000</h2>
                         <p class="lead mb-0">Inversión Total</p>
                     </div>
-                    <div class="row g-4 mt-5">
-                        <div class="col-md-4">
-                            <div class="stat-card p-4 rounded">
-                                <h3 class="h2 mb-0">280</h3>
-                                <p class="mb-0">Horas de Desarrollo</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stat-card p-4 rounded">
-                                <h3 class="h2 mb-0">4</h3>
-                                <p class="mb-0">Meses Estimados</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stat-card p-4 rounded">
-                                <h3 class="h2 mb-0">5</h3>
-                                <p class="mb-0">Módulos Core</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Agrego sección "Costos Actuales" antes de los módulos -->
-    <div class="container my-5">
-       <h2 class="mb-4">Costos Actuales Sin Sistema</h2>
-       <div class="row g-4">
-           <div class="col-md-3">
-               <div class="card bg-danger text-white h-100">
-                   <div class="card-body">
-                       <i class="fas fa-clock fa-2x mb-3"></i>
-                       <h3>48 horas</h3>
-                       <p>Mensuales perdidas en tareas administrativas</p>
-                       <h4 class="mt-2">$480,000</h4>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-3">
-               <div class="card bg-danger text-white h-100">
-                   <div class="card-body">
-                       <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
-                       <h3>15%</h3>
-                       <p>Pérdida de inventario por mal control</p>
-                       <h4 class="mt-2">$300,000</h4>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-3">
-               <div class="card bg-danger text-white h-100">
-                   <div class="card-body">
-                       <i class="fas fa-users-slash fa-2x mb-3"></i>
-                       <h3>5%</h3>
-                       <p>Clientes perdidos por errores</p>
-                       <h4 class="mt-2">$500,000</h4>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-3">
-               <div class="card bg-danger text-white h-100">
-                   <div class="card-body">
-                       <i class="fas fa-file-invoice fa-2x mb-3"></i>
-                       <h3>100%</h3>
-                       <p>Riesgo en auditorías</p>
-                       <h4 class="mt-2">$1,000,000</h4>
-                   </div>
-               </div>
-           </div>
-       </div>
     </div>
 
     <!-- Módulos -->
@@ -155,9 +88,6 @@
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="h5 mb-0">$1,000,000</span>
                             <span class="badge bg-primary">40 horas</span>
-                        </div>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 15%"></div>
                         </div>
                         <ul class="list-unstyled">
                             <li><i class="fas fa-check text-success me-2"></i>Setup proyecto</li>
@@ -181,90 +111,11 @@
                             <span class="h5 mb-0">$2,500,000</span>
                             <span class="badge bg-primary">100 horas</span>
                         </div>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 35%"></div>
-                        </div>
                         <ul class="list-unstyled">
                             <li><i class="fas fa-check text-success me-2"></i>Auth system</li>
                             <li><i class="fas fa-check text-success me-2"></i>Gestión servicios</li>
                             <li><i class="fas fa-check text-success me-2"></i>Calendario drag&drop</li>
                             <li><i class="fas fa-check text-success me-2"></i>Control inventario</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Verificación formularios</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Generación certificados</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Portal Técnico -->
-            <div class="col-lg-6">
-                <div class="card h-100 module-card">
-                    <div class="card-body">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt fa-lg"></i>
-                        </div>
-                        <h4 class="text-primary">Portal Técnico</h4>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="h5 mb-0">$2,000,000</span>
-                            <span class="badge bg-primary">80 horas</span>
-                        </div>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 30%"></div>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>PWA offline</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Formularios</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Control stock</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Firma digital</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Geolocalización</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Módulo Certificados -->
-            <div class="col-lg-6">
-                <div class="card h-100 module-card">
-                    <div class="card-body">
-                        <div class="feature-icon">
-                            <i class="fas fa-certificate fa-lg"></i>
-                        </div>
-                        <h4 class="text-primary">Módulo Certificados</h4>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="h5 mb-0">$1,000,000</span>
-                            <span class="badge bg-primary">40 horas</span>
-                        </div>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 15%"></div>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Templates personalizados</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Correlativo configurable</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Envío automático</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Módulo Reportes -->
-            <div class="col-lg-6">
-                <div class="card h-100 module-card">
-                    <div class="card-body">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-bar fa-lg"></i>
-                        </div>
-                        <h4 class="text-primary">Reportes/Analytics</h4>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="h5 mb-0">$500,000</span>
-                            <span class="badge bg-primary">20 horas</span>
-                        </div>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 5%"></div>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Tendencias productos</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Dashboards interactivos</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Exportación datos</li>
                         </ul>
                     </div>
                 </div>
@@ -272,201 +123,35 @@
         </div>
     </div>
 
-    <!-- Modifico sección Beneficios -->
+    <!-- Beneficios -->
     <div class="container my-5">
-       <h2 class="mb-4">Retorno de Inversión</h2>
-       <div class="row g-4">
-           <div class="col-md-4">
-               <div class="benefit-card p-4">
-                   <i class="fas fa-rocket fa-2x text-primary mb-3"></i>
-                   <h5>Ahorro Mensual</h5>
-                   <h3 class="text-success">$2,280,000</h3>
-                   <p>Reducción de costos operativos</p>
-               </div>
-           </div>
-           <div class="col-md-4">
-               <div class="benefit-card p-4">
-                   <i class="fas fa-chart-line fa-2x text-primary mb-3"></i>
-                   <h5>Aumento Productividad</h5>
-                   <h3 class="text-success">40%</h3>
-                   <p>Mayor eficiencia del personal</p>
-               </div>
-           </div>
-           <div class="col-md-4">
-               <div class="benefit-card p-4">
-                   <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
-                   <h5>Satisfacción Cliente</h5>
-                   <h3 class="text-success">95%</h3>
-                   <p>Mejora en servicio al cliente</p>
-               </div>
-           </div>
-       </div>
-    </div>
-    <!-- Agrego sección de Garantías -->
-    <div class="container my-5">
-       <h2 class="mb-4">Garantías</h2>
-       <div class="row g-4">
-           <div class="col-md-4">
-               <div class="card h-100">
-                   <div class="card-body">
-                       <i class="fas fa-medal fa-2x text-primary mb-3"></i>
-                       <h5>3 Meses de Soporte</h5>
-                       <p>Soporte técnico dedicado incluido</p>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-4">
-               <div class="card h-100">
-                   <div class="card-body">
-                       <i class="fas fa-graduation-cap fa-2x text-primary mb-3"></i>
-                       <h5>Capacitación Completa</h5>
-                       <p>Entrenamiento para todo su personal</p>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-4">
-               <div class="card h-100">
-                   <div class="card-body">
-                       <i class="fas fa-code fa-2x text-primary mb-3"></i>
-                       <h5>Código Fuente</h5>
-                       <p>Propiedad total del sistema</p>
-                   </div>
-               </div>
-           </div>
-       </div>
-    </div>
-
-    <!-- Planes de Pago -->
-    <div class="container my-5">
-        <h2 class="mb-4">Planes de Pago Flexibles</h2>
+        <h2 class="mb-4">Retorno de Inversión</h2>
         <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">3 cuotas</h5>
-                        <h3 class="mb-3">$2,333,333</h3>
-                        <p class="text-muted">mensual</p>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 100%"></div>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Pago rápido</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Menor costo total</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">6 cuotas</h5>
-                        <h3 class="mb-3">$1,166,666</h3>
-                        <p class="text-muted">mensual</p>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 75%"></div>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Balance ideal</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Cuota moderada</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="pricing-badge">Recomendado</div>
-                    <div class="card-body">
-                        <h5 class="text-primary">12 cuotas</h5>
-                        <h3 class="mb-3">$583,333</h3>
-                        <p class="text-muted">mensual</p>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 50%"></div>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Cuota accesible</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Mayor flexibilidad</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">16 cuotas</h5>
-                        <h3 class="mb-3">$437,500</h3>
-                        <p class="text-muted">mensual</p>
-                        <div class="progress mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: 25%"></div>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Cuota mínima</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Máxima flexibilidad</li>
-                        </ul>
-                    </div>
+            <div class="col-md-4">
+                <div class="benefit-card p-4">
+                    <i class="fas fa-rocket fa-2x text-primary mb-3"></i>
+                    <h5>Ahorro Mensual</h5>
+                    <h3 class="text-success">$2,280,000</h3>
+                    <p>Reducción de costos operativos</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Timeline -->
-    <div class="container my-5">
-       <h2 class="mb-4">Cronograma de Implementación</h2>
-       <div class="timeline">
-           <div class="timeline-item p-4 mb-4">
-               <h5>Mes 1: Base y Portal Oficina</h5>
-               <ul class="list-unstyled">
-                   <li><i class="fas fa-circle text-primary me-2"></i>Setup inicial del proyecto</li>
-                   <li><i class="fas fa-circle text-primary me-2"></i>Configuración de infraestructura</li>
-                   <li><i class="fas fa-circle text-primary me-2"></i>Desarrollo core del Portal Oficina</li>
-               </ul>
-           </div>
-    
-           <div class="timeline-item p-4 mb-4">
-               <h5>Mes 2: Portal Técnico</h5>
-               <ul class="list-unstyled">
-                   <li><i class="fas fa-circle text-primary me-2"></i>Desarrollo app móvil PWA</li>
-                   <li><i class="fas fa-circle text-primary me-2"></i>Implementación trabajo offline</li>
-                   <li><i class="fas fa-circle text-primary me-2"></i>Integración con Portal Oficina</li>
-               </ul>
-           </div>
-    
-           <div class="timeline-item p-4 mb-4">
-               <h5>Mes 3: Certificados y Reportes</h5>
-               <ul class="list-unstyled">
-                   <li><i class="fas fa-circle text-primary me-2"></i>Sistema de certificados</li>
-                   <li><i class="fas fa-circle text-primary me-2"></i>Dashboard analytics</li>
-                   <li><i class="fas fa-circle text-primary me-2"></i>Testing y optimización</li>
-               </ul>
-           </div>
-    
-           <div class="timeline-item p-4">
-               <h5>Mes 4: Finalización</h5>
-               <ul class="list-unstyled">
-                   <li><i class="fas fa-circle text-primary me-2"></i>Testing completo</li>
-                   <li><i class="fas fa-circle text-primary me-2"></i>Capacitación</li>
-                   <li><i class="fas fa-circle text-primary me-2"></i>Deployment final</li>
-               </ul>
-           </div>
-       </div>
-    </div>
-    
     <!-- Footer -->
     <footer class="bg-gradient-premium text-white py-5 mt-5">
-       <div class="container">
-           <div class="row align-items-center">
-               <div class="col-lg-8">
-                   <h3>¿Listo para optimizar su empresa?</h3>
-                   <p class="lead mb-0">Contáctenos para iniciar la transformación digital de su negocio</p>
-               </div>
-               <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                   <p class="mb-0">sepujimenez.dev@gmail.com</p>
-                   <p class="mb-0">+56 953550896</p>
-               </div>
-           </div>
-       </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3>¿Listo para optimizar su empresa?</h3>
+                    <p class="lead mb-0">Contáctenos para iniciar la transformación digital de su negocio</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <p class="mb-0">sepujimenez.dev@gmail.com</p>
+                    <p class="mb-0">+56 953550896</p>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
