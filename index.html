@@ -8,255 +8,299 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --primary: #1a1a1a;
-            --secondary: #333333;
-            --accent: #0066cc;
-            --light: #f8f9fa;
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --success: #10b981;
+            --text-light: #94a3b8;
+            --gradient: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
         }
 
         body {
             font-family: 'Inter', sans-serif;
+            line-height: 1.6;
             color: var(--primary);
-            background-color: var(--light);
+            background-color: #f8fafc;
         }
 
-        .hero-section {
-            background: linear-gradient(45deg, #1a1a1a, #333333);
-            padding: 100px 0;
+        .bg-gradient-premium {
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.857 8.485 15.272 9.9l7.9-7.9h-.83zm5.657 0L19.514 8.485 20.93 9.9l8.485-8.485h-1.415zM32.372 0L26.8 5.657 28.214 7.07 34.8 0h-2.427zm5.657 0l-6.485 6.485L33.03 7.9l6.485-6.485h-1.415zm5.657 0l-7.071 7.071 1.415 1.415L45.8 0h-2.114zM50.542 0l-8.485 8.485 1.414 1.414L52.8 0h-2.257zM44.886 0L35.3 9.586l1.414 1.414L47.8 0h-2.914zm5.656 0L39.543 10.9l1.414 1.414L53.8 0h-3.258zM48.457 0L37.557 10.9l1.414 1.414L54.8 0h-6.343zm2.828 0L38.972 12.314l1.414 1.414L55.8 0h-4.515zm-39.8 0l13.514 13.514-1.414 1.414L5.657 0H11.4zm-3.272 0L24.857 13.514l-1.414 1.414L3.543 0h7.6zm-3.271 0l20.457 20.457-1.414 1.414L0 2.544V0h4.857zM0 5.373L28.457 33.83l-1.414 1.414L0 8.2V5.374zm0 5.656l26.457 26.457-1.414 1.414L0 13.857v-2.828zm0 5.657l24.457 24.457-1.414 1.414L0 19.514v-2.828zm0 5.657l22.457 22.457-1.414 1.414L0 25.17v-2.828zm0 5.657l20.457 20.457-1.414 1.414L0 30.828v-2.828zm0 5.657l18.457 18.457-1.414 1.414L0 36.485v-2.828zm0 5.657l16.457 16.457-1.414 1.414L0 42.142v-2.828zm0 5.657l14.457 14.457-1.414 1.414L0 47.8v-2.828zm0 5.657l12.457 12.457-1.414 1.414L0 53.456v-2.828zm0 5.657l10.457 10.457-1.414 1.414L0 59.113v-2.828zm0 5.657l8.457 8.457-1.414 1.414L0 64.77v-2.828zm0 5.657l6.457 6.457-1.414 1.414L0 70.427v-2.828zm0 5.657l4.457 4.457-1.414 1.414L0 76.084v-2.828zm0 5.657l2.457 2.457-1.414 1.414L0 81.741v-2.828z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
 
         .card {
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
         }
 
-        .portal-card {
-            border-left: 3px solid var(--accent);
+        .feature-section {
+            position: relative;
+            padding: 2rem;
+            border-radius: 16px;
+            background: #ffffff;
+            margin-bottom: 1.5rem;
         }
 
-        .module-section {
-            margin-left: 2rem;
-            padding-left: 1rem;
-            border-left: 2px solid rgba(0,102,204,0.2);
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1rem;
         }
 
         .feature-list li {
-            margin-bottom: 0.5rem;
-            color: #666;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .feature-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
-    <div class="hero-section text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center">
+    <div class="bg-gradient-premium text-white py-5 position-relative">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
                     <h1 class="display-4 fw-bold mb-4">Sistema Integral de Control de Plagas</h1>
-                    <p class="lead mb-0">Solución empresarial para gestión y control de operaciones</p>
+                    <p class="lead mb-4">Transforme su empresa con una solución digital completa</p>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-4 backdrop-blur mb-4">
+                        <h2 class="h1 mb-3">$7,000,000</h2>
+                        <p class="lead mb-0">Inversión Total</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Portales -->
+    </div><!-- Portales -->
     <div class="container my-5">
         <!-- Portal Oficina -->
-        <div class="card portal-card mb-5">
-            <div class="card-body p-4">
-                <h3 class="mb-4">Portal Oficina</h3>
-                
+        <div class="feature-section">
+            <div class="d-flex align-items-center mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3 class="mb-0 ms-3">Portal Oficina</h3>
+            </div>
+            
+            <div class="row g-4">
                 <!-- Gestión de Servicios -->
-                <div class="module-section mb-4">
-                    <h5 class="text-primary mb-3">Gestión de Servicios</h5>
-                    <ul class="feature-list list-unstyled">
-                        <li><i class="fas fa-check text-success me-2"></i>Registro de solicitudes (problema, cliente, sede)</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Programación de servicios (fecha, hora, frecuencia)</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Calendario con vista mensual/semanal/diaria</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Asignación de técnicos</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Gestión drag&drop de servicios</li>
-                    </ul>
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-tasks me-2"></i>
+                            Gestión de Servicios
+                        </h5>
+                        <ul class="feature-list list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Registro de solicitudes</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Programación de servicios</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Calendario personalizable</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Asignación de técnicos</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Gestión drag&drop</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Control de Inventario -->
-                <div class="module-section mb-4">
-                    <h5 class="text-primary mb-3">Control de Inventario</h5>
-                    <ul class="feature-list list-unstyled">
-                        <li><i class="fas fa-check text-success me-2"></i>Stock bodega principal</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Stock por técnico</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Control de movimientos</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Alertas de stock bajo</li>
-                    </ul>
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-boxes me-2"></i>
+                            Control de Inventario
+                        </h5>
+                        <ul class="feature-list list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Stock bodega principal</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Stock por técnico</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Control de movimientos</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Alertas de stock bajo</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- Verificación y Certificación -->
-                <div class="module-section">
-                    <h5 class="text-primary mb-3">Verificación y Certificación</h5>
-                    <ul class="feature-list list-unstyled">
-                        <li><i class="fas fa-check text-success me-2"></i>Revisión de formularios técnicos</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Generación de certificados</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Correlativo configurable</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Envío automático a clientes</li>
-                    </ul>
+                <!-- Verificación -->
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-certificate me-2"></i>
+                            Certificación
+                        </h5>
+                        <ul class="feature-list list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Revisión de formularios</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Generación automática</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Correlativo configurable</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Envío automático</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div><!-- Portal Técnico -->
-        <div class="card portal-card mb-5">
-            <div class="card-body p-4">
-                <h3 class="mb-4">Portal Técnico (App Móvil)</h3>
+        </div>
+
+        <!-- Portal Técnico -->
+        <div class="feature-section">
+            <div class="d-flex align-items-center mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="mb-0 ms-3">Portal Técnico (App Móvil)</h3>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Trabajo -->
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-clipboard-list me-2"></i>
+                            Gestión de Trabajo
+                        </h5>
+                        <ul class="feature-list list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Servicios asignados</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Info cliente/sede</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Control servicios</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Trabajo offline</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Formularios -->
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-file-alt me-2"></i>
+                            Formularios Digitales
+                        </h5>
+                        <ul class="feature-list list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Registro de plagas</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Control productos</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Observaciones</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Firma digital</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stock -->
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4">
+                        <h5 class="text-primary mb-3">
+                            <i class="fas fa-box me-2"></i>
+                            Control Stock
+                        </h5>
+                        <ul class="feature-list list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Stock personal</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Registro uso</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Solicitud productos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inversión -->
+        <div class="feature-section text-center">
+            <h3 class="mb-5">Inversión y Financiamiento</h3>
+            <div class="card bg-gradient-premium text-white p-4 mb-5">
+                <h2 class="display-4 mb-0">$7,000,000</h2>
+                <p class="lead">Inversión total</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4>3 Cuotas</h4>
+                            <div class="display-6 my-3">$2,333,333</div>
+                            <p class="text-muted">mensual</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4>6 Cuotas</h4>
+                            <div class="display-6 my-3">$1,166,666</div>
+                            <p class="text-muted">mensual</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4>12 Cuotas</h4>
+                            <div class="display-6 my-3">$583,333</div>
+                            <p class="text-muted">mensual</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="feature-section">
+            <h3 class="mb-4">Proceso de Implementación</h3>
+            <div class="card p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <p class="h5 mb-0 ms-3">Tiempo estimado: 4 meses</p>
+                </div>
                 
-                <!-- Gestión de Trabajo -->
-                <div class="module-section mb-4">
-                    <h5 class="text-primary mb-3">Gestión de Trabajo</h5>
-                    <ul class="feature-list list-unstyled">
-                        <li><i class="fas fa-check text-success me-2"></i>Vista de servicios asignados</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Información de cliente/sede</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Iniciar/finalizar servicios</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Trabajo offline</li>
-                    </ul>
-                </div>
-
-                <!-- Formularios Digitales -->
-                <div class="module-section mb-4">
-                    <h5 class="text-primary mb-3">Formularios Digitales</h5>
-                    <ul class="feature-list list-unstyled">
-                        <li><i class="fas fa-check text-success me-2"></i>Registro de plagas identificadas</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Productos utilizados (concentración, ISP)</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Método de aplicación y dosificación</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Observaciones y recomendaciones</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Firma del cliente</li>
-                    </ul>
-                </div>
-
-                <!-- Control Stock Personal -->
-                <div class="module-section">
-                    <h5 class="text-primary mb-3">Control Stock Personal</h5>
-                    <ul class="feature-list list-unstyled">
-                        <li><i class="fas fa-check text-success me-2"></i>Visualización de inventario</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Registro de productos usados</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Solicitud de reposición</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h3 class="mb-4">Infraestructura</h3>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="module-section">
-                            <ul class="feature-list list-unstyled">
-                                <li><i class="fas fa-check text-success me-2"></i>Sistema en subdominio personalizado</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Base de datos en Google Cloud</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Copias de seguridad automáticas</li>
-                                <li><i class="fas fa-check text-success me-2"></i>SSL incluido</li>
-                            </ul>
-                        </div>
+                <div class="timeline">
+                    <div class="mb-4">
+                        <h5 class="text-primary">Fase 1: Configuración</h5>
+                        <p class="text-muted ms-4">Setup inicial y configuración base</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-primary">Fase 2: Portal Oficina</h5>
+                        <p class="text-muted ms-4">Desarrollo administrativo</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-primary">Fase 3: Portal Técnico</h5>
+                        <p class="text-muted ms-4">Desarrollo app móvil</p>
+                    </div>
+                    <div>
+                        <h5 class="text-primary">Fase 4: Finalización</h5>
+                        <p class="text-muted ms-4">Testing y capacitación</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Inversión -->
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h3 class="mb-5">Inversión y Financiamiento</h3>
-                <div class="card border-0 bg-light p-4 mb-5">
-                    <h3 class="display-4 mb-0">$7,000,000</h3>
-                    <p class="text-muted">Inversión total</p>
-                </div>
-                
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5>3 Cuotas</h5>
-                                <p class="display-6 mb-0">$2,333,333</p>
-                                <p class="text-muted">mensual</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5>6 Cuotas</h5>
-                                <p class="display-6 mb-0">$1,166,666</p>
-                                <p class="text-muted">mensual</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5>12 Cuotas</h5>
-                                <p class="display-6 mb-0">$583,333</p>
-                                <p class="text-muted">mensual</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h3 class="mb-4">Garantías</h3>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="module-section">
-                            <ul class="feature-list list-unstyled">
-                                <li><i class="fas fa-check text-success me-2"></i>3 meses de soporte post-implementación</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Capacitación completa incluida</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Documentación técnica</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Código fuente incluido</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Proceso de Implementación -->
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h3 class="mb-4">Proceso de Implementación</h3>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="module-section">
-                            <p class="mb-4"><strong>Tiempo estimado: 4 meses</strong></p>
-                            <div class="mb-3">
-                                <h5 class="text-primary">Fase 1: Configuración</h5>
-                                <p class="text-muted">Setup inicial y configuración base</p>
-                            </div>
-                            <div class="mb-3">
-                                <h5 class="text-primary">Fase 2: Portal Oficina</h5>
-                                <p class="text-muted">Desarrollo del sistema administrativo</p>
-                            </div>
-                            <div class="mb-3">
-                                <h5 class="text-primary">Fase 3: Portal Técnico</h5>
-                                <p class="text-muted">Desarrollo e implementación de app móvil</p>
-                            </div>
-                            <div>
-                                <h5 class="text-primary">Fase 4: Finalización</h5>
-                                <p class="text-muted">Testing y capacitación del personal</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer minimalista -->
+    <!-- Footer -->
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="row">
